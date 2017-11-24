@@ -2,7 +2,8 @@
 <html>
 <head>
 	<title>Exam-IN</title>
-	<link rel="stylesheet" type="text/css" href="lander-style.css">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/lander-style.css">
 </head>
 <body>
 	<!--Navigation-->
@@ -23,6 +24,7 @@
 			<input type="text" name="first" placeholder="First Name">
 			<input type="text" name="last" placeholder="Last Name">
 			<input type="email" name="email" placeholder="Email">
+			<input type="text" name="username" placeholder="Username">
 			<input type="password" name="password" placeholder="Password">
 			<input type="password" name="re-password" placeholder="Re-Enter Password">
 			<button type="submit">Sign-up</button>
