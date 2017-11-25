@@ -32,6 +32,6 @@ if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && !
 }
 else {
     $_SESSION['message'] = "Invalid parameters provided for account verification!";
-    header("location: error.php");
+    header("location: ../error.php");
 }     
 ?>

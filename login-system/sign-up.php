@@ -33,7 +33,6 @@ if($pass=$passcheck)
         // Add user to the database
         if ( $mysqli->query($sql) ){
 
-           // $_SESSION['active'] = 0; //0 until user activates their account with verify.php
             $_SESSION['message'] =
                      "Confirmation link has been sent to $email, please verify
                      your account by clicking on the link in the message!";
@@ -58,11 +57,11 @@ if($pass=$passcheck)
 
         else {
             $_SESSION['message'] = 'Registration failed!';
-            header("location: error.php");
+            header("location: ../error.php");
         }
      }
 }
 else{
     $_SESSION['message'] = 'Password do not match please try again';
-    header("location: error.php");
+    header("location: ../error.php");
 }
