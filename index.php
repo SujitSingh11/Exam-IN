@@ -1,44 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Exam-IN</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="css/lander-style.css">
+	<?php include 'include/meta_include.php' ?>
+	<title>Exam-IN</title>	
+	<?php include 'include/css_include.php' ?>
 </head>
 <body>
 	<!--Navigation-->
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-	  <a class="navbar-brand" href="#">Navbar</a>
-	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	<nav class="navbar navbar-expand-lg navbar-light bg-warning">
+	  <a class="navbar-brand" href="#">Exam-in</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
-
-	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-	    <ul class="navbar-nav mr-auto">
-	      <li class="nav-item active">
-	        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="#">Link</a>
-	      </li>
-	      <li class="nav-item dropdown">
-	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	          Dropdown
-	        </a>
-	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	          <a class="dropdown-item" href="#">Action</a>
-	          <a class="dropdown-item" href="#">Another action</a>
-	          <div class="dropdown-divider"></div>
-	          <a class="dropdown-item" href="#">Something else here</a>
-	        </div>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link disabled" href="#">Disabled</a>
-	      </li>
-	    </ul>
+	  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+	    <div class="navbar-nav">
+	      
+	    </div>
+	  </div>
+	  <div class="form-inline ">
+	  	<button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#signupmodal">
+		  Sign-up
+		</button>
+	  	<button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#signinmodal">
+		  Sign-in
+		</button>
 	  </div>
 	</nav>
 	<!--Content-->
@@ -47,37 +32,99 @@
 
 	<!--Models-->
 	<!--Sign-up Model-->
-	<div>
-		<form class="" method="">
-			<h3>Sign-up</h3>
-			<input type="text" name="first" placeholder="First Name">
-			<input type="text" name="last" placeholder="Last Name">
-			<input type="text" name="username" placeholder="Username">
-			<input type="email" name="email" placeholder="Email">
-			<input type="password" name="password" placeholder="Password">
-			<input type="password" name="re-password" placeholder="Re-Enter Password">
-			<button type="submit">Sign-up</button>
-			<button type="cancle">Close</button>
-		</form>
+	<div id="signupmodal" class="modal fade" tabindex="-1" role="dialog">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title">Sign-up</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	        <form class="" method="">    
+	          <div class="form-row">
+	              <div class="col"> 
+	              	<label class="col-form-label" for="formGroupExampleInput">First Name</label>
+	                <input type="text" class="form-control" name="first" placeholder="First name">
+	              </div>
+	              <div class="col">
+	              	<label class="col-form-label" for="formGroupExampleInput">Last Name</label>
+	                <input type="text" class="form-control" name="last" placeholder="Last name">
+	              </div>
+	          </div>
+	          <div class="form-row">
+	              <div class="col"> 
+	              	<label class="col-form-label" for="formGroupExampleInput">Username</label>
+	                <input type="text" class="form-control" name="username" placeholder="Username">
+	              </div>
+	              <div class="col">
+	              	<label class="col-form-label" for="formGroupExampleInput">E-mail</label>
+	                <input type="email" class="form-control" name="email" placeholder="Email">
+	              </div>
+	          </div>
+	          <div class="form-row">
+	              <div class="col"> 
+	              	<label class="col-form-label" for="formGroupExampleInput">Password</label>
+	                <input type="password" class="form-control" name="password" placeholder="Password">
+	              </div>
+	              <div class="col">
+	              	<label class="col-form-label" for="formGroupExampleInput">Re-Enter Password</label>
+	                <input type="password" class="form-control" name="re-password" placeholder="Re-Enter Password">
+	              </div>
+	          </div>
+	          <div class="form-group p-1">
+	              <label for="exampleFormControlSelect1">Select type of User</label>
+	              <select class="form-control" name="user-type" id="usertype">
+	                <option>Student</option>
+	                <option>Staff</option>
+	                <option>Admin</option>
+	              </select>
+	          </div>
+	          <div class="modal-footer">
+		        <button type="submit" class="btn btn-primary">Sign-up</button>
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		      </div>	
+	       </form>
+	      </div>
+	    </div>
+	  </div>
 	</div>
+
 	<!--Sign-in Model-->
-	<div>
-		<form class="" method="">
-			<h3>Sign-in</h3>
-			<input type="email" name="email" placeholder="Email">
-			<input type="password" name="password" placeholder="Password">
-			<button type="submit">Sign-in</button>
-			<button type="cancle">Close</button>
-		</form>
+	<div id="signinmodal" class="modal fade" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title">Sign-in</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	        <form class="" method="">    
+	          <div class="form-group">
+			    <label class="col-form-label" for="formGroupExampleInput">E-mail</label>
+			    <input type="text" class="form-control" name="E-mail" id="formGroupExampleInput" placeholder="E-mail">
+			  </div>
+			  <div class="form-group">
+			    <label class="col-form-label" for="formGroupExampleInput2">Password</label>
+			    <input type="text" class="form-control" name="Password" id="formGroupExampleInput2" placeholder="Password">
+			  </div>
+			  <div class="modal-footer">
+			   <button type="submit" name="sign-in-submit" class="btn btn-primary">Sign-in</button>
+	           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	       	  </div>
+	       </form>
+	      </div>
+	    </div>
+	  </div>
 	</div>
 
 	<!--Footer-->
 	<footer>
 		
 	</footer>
-
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<?php include 'include/js_include.php' ?>
 </body>
 </html>

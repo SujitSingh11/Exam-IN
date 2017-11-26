@@ -7,6 +7,7 @@ $username = $mysqli->escape_string($_POST['username']);
 $email = $mysqli->escape_string($_POST['email']);
 $pass = $mysqli->escape_string($_POST['password']);
 $passcheck = $mysqli->escape_string($_POST['re-password']);
+$user_type = $mysqli->escape_string($_POST['user-type']);
 
 if($pass=$passcheck)
 {
@@ -27,8 +28,8 @@ if($pass=$passcheck)
         // Email doesn't already exist in a database, proceed...
 
         // active is 0 by DEFAULT (no need to include it here)
-        $sql = "INSERT INTO users (first_name, last_name, username, email, password, hash) " 
-                . "VALUES ('$first_name','$last_name','$username','$email','$password', '$hash')";
+        $sql = "INSERT INTO users (first_name, last_name, username, email, password, hash, usertype) " 
+                . "VALUES ('$first_name','$last_name','$username','$email','$password', '$hash', '$user_type')";
 
         // Add user to the database
         if ( $mysqli->query($sql) ){
