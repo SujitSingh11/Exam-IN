@@ -1,1 +1,8 @@
-/*CSS FOR LANDING PAGE*/
+
+body{
+	background-color: #f8f9fa !important;
+}
+
+nav a{
+	color: #fffff2 !important;
+}

@@ -4,21 +4,25 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Success</title>
+    <?php include 'include/meta_include.php' ?>
+    <title>Success</title>
+    <?php include 'include/css_include.php' ?>    
 </head>
-<body>
-<div>
-    <h1>Success</h1>
-    <p>
-    <?php 
-    if( isset($_SESSION['message']) AND !empty($_SESSION['message']) ):
-        echo $_SESSION['message'];    
-    else:
-        header( "location: index.php" );
-    endif;
-    ?>
-    </p>
-    <a href="index.php"><button>Home</button></a>
-</div>
+<body class="bg-light">
+    <div>
+        <h1>Success</h1>
+        <p>
+            <?php 
+            if( isset($_SESSION['message']) AND !empty($_SESSION['message']) ):
+                echo $_SESSION['message'];    
+            else:
+                header( "location: index.php" );
+            endif;
+            ?>
+        </p>
+        <a href="index.php"><button>Home</button></a>
+    </div>
+
+    <?php include 'include/js_include.php' ?>    
 </body>
 </html>

@@ -1,8 +1,7 @@
 <?php
-  	
-  	$conn = mysqli_connect('localhost','root','','sococlub');
-
-  	if (!$conn) {
-  		die("connection failed " . mysqli_connect_error());
-  	}
-
+/* Database connection settings */
+$host = 'localhost';
+$user = 'root';
+$pass = '';
+$db = '';
+$mysqli = new mysqli($host,$user,$pass,$db) or die($mysqli->error);

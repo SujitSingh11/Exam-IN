@@ -25,7 +25,6 @@ if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && !
         
         // Set the user status to active (active = 1)
         $mysqli->query("UPDATE users SET active='1' WHERE email='$email'") or die($mysqli->error);
-       // $_SESSION['active'] = 1;
         
         header("location: success.php");
     }
