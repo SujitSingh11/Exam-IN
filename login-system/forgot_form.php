@@ -28,8 +28,8 @@
 	<?php include '../include/js_include.php' ?>
 	<script type="text/javascript">
 		document.getElementById("HomeButton").onclick = function () {
-        location.href = "../index.php";
-    };
+        	location.href = "../index.php";
+   		};
 	</script>
 </body>
 </html>

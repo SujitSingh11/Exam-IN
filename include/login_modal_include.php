@@ -9,49 +9,49 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form class="" method="">    
-					<div class="form-row">
-						<div class="col"> 
-							<label class="col-form-label" for="formGroupExampleInput">First Name</label>
-							<input type="text" class="form-control" name="first" placeholder="First name">
+					<form  method="POST" action="login-system/sign-up.php">    
+						<div class="form-row">
+							<div class="col"> 
+								<label class="col-form-label">First Name</label>
+								<input type="text" class="form-control" name="first" placeholder="First name">
+							</div>
+							<div class="col">
+								<label class="col-form-label">Last Name</label>
+								<input type="text" class="form-control" name="last" placeholder="Last name">
+							</div>
 						</div>
-						<div class="col">
-							<label class="col-form-label" for="formGroupExampleInput">Last Name</label>
-							<input type="text" class="form-control" name="last" placeholder="Last name">
+						<div class="form-row">
+							<div class="col"> 
+								<label class="col-form-label">Username</label>
+								<input type="text" class="form-control" name="username" placeholder="Username">
+							</div>
+							<div class="col">
+								<label class="col-form-label">E-mail</label>
+								<input type="email" class="form-control" name="email" placeholder="Email">
+							</div>
 						</div>
-					</div>
-					<div class="form-row">
-						<div class="col"> 
-							<label class="col-form-label" for="formGroupExampleInput">Username</label>
-							<input type="text" class="form-control" name="username" placeholder="Username">
+						<div class="form-row">
+							<div class="col"> 
+								<label class="col-form-label">Password</label>
+								<input type="password" class="form-control" name="password" placeholder="Password">
+							</div>
+							<div class="col">
+								<label class="col-form-label">Re-Enter Password</label>
+								<input type="password" class="form-control" name="re-password" placeholder="Re-Enter Password">
+							</div>
 						</div>
-						<div class="col">
-							<label class="col-form-label" for="formGroupExampleInput">E-mail</label>
-							<input type="email" class="form-control" name="email" placeholder="Email">
+						<div class="form-group p-1">
+							<label>Select type of User</label>
+							<select class="form-control" name="user-type" id="usertype">
+								<option>Student</option>
+								<option>Staff</option>
+								<option>Admin</option>
+							</select>
 						</div>
-					</div>
-					<div class="form-row">
-						<div class="col"> 
-							<label class="col-form-label" for="formGroupExampleInput">Password</label>
-							<input type="password" class="form-control" name="password" placeholder="Password">
-						</div>
-						<div class="col">
-							<label class="col-form-label" for="formGroupExampleInput">Re-Enter Password</label>
-							<input type="password" class="form-control" name="re-password" placeholder="Re-Enter Password">
-						</div>
-					</div>
-					<div class="form-group p-1">
-						<label for="exampleFormControlSelect1">Select type of User</label>
-						<select class="form-control" name="user-type" id="usertype">
-							<option>Student</option>
-							<option>Staff</option>
-							<option>Admin</option>
-						</select>
-					</div>
-					<div class="modal-footer">
-						<button type="submit" class="btn btn-primary">Sign-up</button>
-						<button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-					</div>	
+						<div class="modal-footer">
+							<button type="submit" name="register" class="btn btn-dark">Sign-up</button>
+							<button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+						</div>	
 					</form>
 				</div>
 			</div>
@@ -69,20 +69,20 @@
 				    </button>
 			    </div>
 			    <div class="modal-body">
-				    <form class="" method="">    
-				    <div class="form-group">
-						<label class="col-form-label" for="formGroupExampleInput">E-mail</label>
-						<input type="email" class="form-control" name="E-mail" placeholder="E-mail">
-					</div>
-					<div class="form-group">
-						<label class="col-form-label" for="formGroupExampleInput2">Password</label>
-						<input type="password" class="form-control" name="Password" placeholder="Password">
-					</div>
-					<p><a style="text-decoration: none;" href="login-system/reset.php"> forgot password? </a></p>
-					<div class="modal-footer">
-						<button type="submit" name="sign-in-submit" class="btn btn-primary">Sign-in</button>
-				    	<button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-				    </div>
+				    <form method="POST" action="login-system/sign-in.php">    
+					    <div class="form-group">
+							<label class="col-form-label">E-mail</label>
+							<input type="email" class="form-control" name="email" placeholder="E-mail">
+						</div>
+						<div class="form-group">
+							<label class="col-form-label">Password</label>
+							<input type="password" class="form-control" name="password" placeholder="Password">
+						</div>
+						<p><a style="text-decoration: none;" href="login-system/forgot_form.php"> forgot password? </a></p>
+						<div class="modal-footer">
+							<button type="submit" name="login" class="btn btn-dark">Sign-in</button>
+					    	<button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+					    </div>
 				    </form>
 			    </div>
 		    </div>

@@ -20,7 +20,7 @@ session_start();
             endif;
             ?>
         </p>
-        <a href="index.php"><button>Home</button></a>
+        <a href="index.php"><button class="btn btn-dark">Home</button></a>
     </div>
 
     <?php include 'include/js_include.php' ?>    
