@@ -39,9 +39,6 @@ if($pass=$passcheck)
         elseif ($user_type=="Staff") {
             $user_rank = 1;
         }
-        elseif ($user_type=="Admin") {
-            $user_rank = 0;
-        }
         
         // active is 0 by DEFAULT (no need to include it here)
         $sql = "INSERT INTO users (first_name, last_name, username, email, password, hash, user_type) 
@@ -61,7 +58,8 @@ if($pass=$passcheck)
             <p>Thank you for signing up!<br> 
             Please click this link to activate your account:<br></p>
             http://localhost/Exam-IN/login-system/verify.php?email='.$email.'&hash='.$hash;
-            $mail = new PHPMailer();                              // Passing `true` enables exceptions
+            
+            $mail = new PHPMailer();                                  // Passing `true` enables exceptions
             try{
                 //Server settings
                 $mail->isSMTP();                                      // Set mailer to use SMTP

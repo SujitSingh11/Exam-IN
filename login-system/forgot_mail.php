@@ -1,13 +1,17 @@
 <?php 
 /* Reset your password form, sends reset.php password link */
-require 'db/database.php';
+require '../db/database.php';
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+//Load composer's autoloader
+require '../vendor/autoload.php';
 session_start();
 
 // Check if form submitted with method="post"
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) 
 {   
-    $email = $mysqli->escape_string($_POST['email']);
-    $result = $mysqli->query("SELECT * FROM users WHERE email='$email'");
+    $email = mysqli_real_escape_string($conn,$_POST['email']);
+    $result = $conn->query("SELECT * FROM users WHERE email='$email'");
 
     if ( $result->num_rows == 0 ) // User doesn't exist
     { 
@@ -27,20 +31,43 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
         . " for a confirmation link to complete your password reset!</p>";
 
         // Send registration confirmation link (reset.php)
-        $to      = $email;
         $subject = 'Password Reset Link ( exam-in.com )';
         $message_body = '
-        Hello '.$first_name.',
+        Hello '.$first_name.',<br>
+        You have requested password reset!<br>
+        Please click this link to reset your password:<br>
+        http://localhost/Exam-IN/login-system/reset_form.php?email='.$email.'&hash='.$hash;  
 
-        You have requested password reset!
-
-        Please click this link to reset your password:
-
-        http://localhost/login-system/reset.php?email='.$email.'&hash='.$hash;  
-
-        mail($to, $subject, $message_body);
-
-        header("location: ../success.php");
-  }
+        $mail = new PHPMailer();                                      // Passing `true` enables exceptions
+        try{
+                //Server settings
+                $mail->isSMTP();                                      // Set mailer to use SMTP
+                $mail->Host = 'smtp.mail.yahoo.com';                  // Specify main and backup SMTP servers
+                $mail->SMTPAuth = true;                               // Enable SMTP authentication
+                $mail->Username = 'examin.assist@yahoo.com';          // SMTP username
+                $mail->Password = 'ggmldduxvkjyyxjm';                 // SMTP password
+                $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+                $mail->Port = 465;    
+                
+                //Recipients
+                $mail->setFrom('examin.assist@yahoo.com','Exam-In');
+                $mail->addAddress($email);     // Add a recipient
+                
+                //Content
+                $mail->isHTML(true);           // Set email format to HTML
+                $mail->Subject = $subject;
+                $mail->Body    = $message_body;
+               if (!$mail->send()) {
+                    echo "Mail not sent";
+                }else{
+                    header("location: ../success.php");
+                }             
+            }
+            catch (Exception $e) {
+                echo 'Message could not be sent.';
+                echo 'Mailer Error: ' . $mail->ErrorInfo;
+            }
+        } 
 }
+
 ?>

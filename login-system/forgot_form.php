@@ -10,14 +10,14 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-6 offset-sm-3">
-				<form class="card" style="margin-top: 30vh">
-					<div class="card-body m-4" >
+				<form method="POST" action="forgot_mail.php" class="card" style="margin-top: 30vh">
+					<div class="card-body m-4">
 						<h2>Reset Password</h2>
 						<div class="form-group">
 							<label class="col-form-lable">Enter your Registered E-mail Address</label>
 							<input type="email" class="form-control" name="email" placeholder="E-mail">
 						</div>
-							<button type="submit" name="reset-submit" class="btn btn-primary">Request Reset Mail</button>
+							<button type="submit" name="reset-submit" class="btn btn-dark">Request Reset Mail</button>
 							<button id="HomeButton" type="button" name="reset-cancel" class="btn btn-warning">Cancel</button>
 					</div>
 				</form>

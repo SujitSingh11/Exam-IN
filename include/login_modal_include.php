@@ -45,7 +45,6 @@
 							<select class="form-control" name="user-type" id="usertype">
 								<option>Student</option>
 								<option>Staff</option>
-								<option>Admin</option>
 							</select>
 						</div>
 						<div class="modal-footer">
