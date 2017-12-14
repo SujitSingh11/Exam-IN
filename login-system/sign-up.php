@@ -43,8 +43,6 @@ if($pass=$passcheck)
         // active is 0 by DEFAULT (no need to include it here)
         $sql = "INSERT INTO users (first_name, last_name, username, email, password, hash, user_type) 
                  VALUES ('$first_name','$last_name','$username','$email','$password', '$hash', '$user_rank')";
-        $query = mysqli_query($conn,$sql);
-        // Add user to the database
 
         if ($query){
 
@@ -72,15 +70,17 @@ if($pass=$passcheck)
                 
                 //Recipients
                 $mail->setFrom('examin.assist@yahoo.com','Exam-In');
-                $mail->addAddress($email);     // Add a recipient
+                $mail->addAddress($email);                             // Add a recipient
                 
                 //Content
-                $mail->isHTML(true);           // Set email format to HTML
+                $mail->isHTML(true);                                   // Set email format to HTML
                 $mail->Subject = $subject;
                 $mail->Body    = $message_body;
                if (!$mail->send()) {
                     echo "Mail not sent";
                 }else{
+                    // Add user to the database
+                    $query = mysqli_query($conn,$sql);
                     header("location: ../success.php");
                 }             
             }

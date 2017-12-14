@@ -8,6 +8,7 @@
 	<?php include 'include/meta_include.php' ?>
 	<title>Exam-IN</title>	
 	<?php include 'include/css_include.php' ?>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body class="bg-light">
 	<?php 
