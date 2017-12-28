@@ -13,11 +13,11 @@ session_start();
         <h1>Error</h1>
         <p>
             <?php 
-            if( isset($_SESSION['message']) AND !empty($_SESSION['message']) ):
-                echo $_SESSION['message'];    
-            else:
-                header( "location: index.php" );
-            endif;
+                if( isset($_SESSION['message']) AND !empty($_SESSION['message']) ):
+                    echo $_SESSION['message'];    
+                else:
+                    header( "location: index.php" );
+                endif;
             ?>
         </p>
         <a href="index.php"><button class="btn btn-dark">Home</button></a>

@@ -2,7 +2,7 @@
 include_once '../db/database.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-//Load composer's autoloader
+// Load composer's autoloader
 require '../vendor/autoload.php';
 session_start();
 
@@ -43,13 +43,15 @@ if($pass=$passcheck)
         // active is 0 by DEFAULT (no need to include it here)
         $sql = "INSERT INTO users (first_name, last_name, username, email, password, hash, user_type) 
                  VALUES ('$first_name','$last_name','$username','$email','$password', '$hash', '$user_rank')";
+        // Add user to the database
+        $query = mysqli_query($conn,$sql);         
 
         if ($query){
 
             $_SESSION['message'] =
                      "Confirmation link has been sent to $email, please verify
                      your account by clicking on the link in the message!";
-            //Mail format
+            // Mail format
             $subject = 'Account Verification ( exam-in.com )';
             $message_body = '
             <h3>Hello '.$first_name.',</h3>
@@ -59,7 +61,7 @@ if($pass=$passcheck)
             
             $mail = new PHPMailer();                                  // Passing `true` enables exceptions
             try{
-                //Server settings
+                // Server settings
                 $mail->isSMTP();                                      // Set mailer to use SMTP
                 $mail->Host = 'smtp.mail.yahoo.com';                  // Specify main and backup SMTP servers
                 $mail->SMTPAuth = true;                               // Enable SMTP authentication
@@ -68,19 +70,18 @@ if($pass=$passcheck)
                 $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
                 $mail->Port = 465;    
                 
-                //Recipients
+                // Recipients
                 $mail->setFrom('examin.assist@yahoo.com','Exam-In');
                 $mail->addAddress($email);                             // Add a recipient
                 
-                //Content
+                // Content
                 $mail->isHTML(true);                                   // Set email format to HTML
                 $mail->Subject = $subject;
                 $mail->Body    = $message_body;
                if (!$mail->send()) {
                     echo "Mail not sent";
                 }else{
-                    // Add user to the database
-                    $query = mysqli_query($conn,$sql);
+                    
                     header("location: ../success.php");
                 }             
             }
