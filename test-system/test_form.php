@@ -1,3 +1,7 @@
+<?php
+	include_once '../db/database.php';
+	session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +14,13 @@
 	<div class="container">
 		<form method="POST" class="m-5" action="test_info.php">
 			<h2>Create Test</h2>
+			<?php
+				if (isset($_SESSION['message'])){
+					echo "<div class='alert alert-warning' role='alert'>".$_SESSION['message']."</div>";
+				}
+				unset($_SESSION["message"]);
+			?>
+			<br>
 			<div class="form-group">
 				<label>Enter Test Name</label>
 				<input class="form-control" type="text" name="test_name" placeholder="Test Name">
