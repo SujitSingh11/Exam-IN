@@ -8,7 +8,7 @@
 <body>
 	<!--Test Form-->
 	<div class="container">
-		<form method="" class="m-5" action="">
+		<form method="POST" class="m-5" action="test_info.php">
 			<h2>Create Test</h2>
 			<div class="form-group">
 				<label>Enter Test Name</label>
@@ -36,14 +36,14 @@
 			    	<div class="col-md-4">
 			    		<label style="display: block">Negative Marking</label>
 					    <label class="custom-control custom-checkbox">
-						    <input id="neg-enable" type="checkbox" class="custom-control-input">
+						    <input id="neg-enable" type="checkbox" class="custom-control-input" name="negative_mark">
 						    <span class="custom-control-indicator"></span>
 						    <span class="custom-control-description">Enable Negative Marking</span>
 						</label>
 					</div>
 					<div class="col-md-4" id="neg-marking">
 						<label>Wrong Answer</label>
-						<input type="number" class="form-control" name="on_wrong" placeholder="Marks 0-5">
+						<input type="text" class="form-control" name="on_wrong" placeholder="Marks 0-5">
 					</div>
 				</div>
 				<br>
@@ -51,14 +51,14 @@
 			    	<div class="col-md-4">
 			    		<label style="display: block">Test Time</label>
 					    <label class="custom-control custom-checkbox">
-						    <input id="test-time-enable" type="checkbox" class="custom-control-input">
+						    <input id="test-time-enable" type="checkbox" class="custom-control-input" name="test_time">
 						    <span class="custom-control-indicator"></span>
 						    <span class="custom-control-description">Enable Test Time</span>
 						</label>
 					</div>
 					<div class="col-md-4" id="test-time">
 						<label>Time Limit</label>
-						<input type="number" class="form-control" name="test_time" placeholder="Time in Minutes">
+						<input type="number" class="form-control" name="test_time_minutes" placeholder="Time in Minutes">
 					</div>
 				</div>
 				<br>
@@ -66,12 +66,12 @@
 					<div class="col">
 						<label style="display: block;">Test Visibility</label>
 						<label class="custom-control custom-radio">
-							<input id="radioStacked1" name="radio-stacked" type="radio" class="custom-control-input" required>
+							<input id="radioStacked1" name="radio-stacked" type="radio" class="custom-control-input" value="public" required>
 							<span class="custom-control-indicator"></span>
 							<span class="custom-control-description">Public</span>
 						</label>
 						<label class="custom-control custom-radio">
-							<input id="radioStacked2" name="radio-stacked" type="radio" class="custom-control-input" required>
+							<input id="radioStacked2" name="radio-stacked" type="radio" class="custom-control-input" value="private" required>
 							<span class="custom-control-indicator"></span>
 							<span class="custom-control-description">Private</span>
 						</label>
@@ -92,7 +92,7 @@
 
 		$('#neg-enable').click(function() {
 			$('#neg-marking')[this.checked ? "show" : "hide"]();
-		});	
+		});
 		$('#test-time-enable').click(function() {
 			$('#test-time')[this.checked ? "show" : "hide"]();
 		});
