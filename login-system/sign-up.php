@@ -16,35 +16,55 @@ $passcheck = mysqli_real_escape_string($conn,$_POST['re-password']);
 $user_type = mysqli_real_escape_string($conn,$_POST['user-type']);
 
 if($pass=$passcheck)
-{   // Password Encription 
+{   // Password Encription
     $password = $conn->escape_string(password_hash($_POST['password'], PASSWORD_BCRYPT));
     $hash = $conn->escape_string( md5( rand(0,1000) ) );
-          
+
     // Check if user with that email already exists
     $result = $conn->query("SELECT * FROM users WHERE email='$email'");
 
     // We know user email exists if the rows returned are more than 0
     if ( $result->num_rows > 0 ) {
-        
+
         $_SESSION['message'] = 'User with this email already exists!';
         header("location: ../error.php");
-        
-    }
-    else { // Email doesn't already exist in a database, proceed...
 
+    }
+    else {
+        // Email doesn't already exist in a database, proceed...
         // Classifying Type of User
-        if ($user_type=="Student") {
-            $user_rank = 2;
-        }
-        elseif ($user_type=="Staff") {
+        if ($user_type=="staff") {
             $user_rank = 1;
         }
-        
+        elseif ($user_type=="student") {
+            $user_rank = 2;
+        }
+
         // active is 0 by DEFAULT (no need to include it here)
-        $sql = "INSERT INTO users (first_name, last_name, username, email, password, hash, user_type) 
+        $sql_users = "INSERT INTO users (first_name, last_name, username, email, password, hash, user_type)
                  VALUES ('$first_name','$last_name','$username','$email','$password', '$hash', '$user_rank')";
-        // Add user to the database
-        $query = mysqli_query($conn,$sql);         
+        // Add user to the users table
+        $query = mysqli_query($conn,$sql_users);
+
+        // Add user to the coorsponding table
+        $result_usertype = $conn->query("SELECT user_id FROM users WHERE email='$email'");
+
+        if ($result_usertype->num_rows > 0) {
+          $user_id_fetch = mysqli_fetch_assoc($result_usertype);
+          $user_id = (int) $user_id_fetch['user_id'];
+          echo $user_id;
+          if ($user_type == "staff") {
+            $sql_staff = "INSERT INTO staff (user_id) VALUES ($user_id)";
+            $query_staff = mysqli_query($conn,$sql_staff);
+          }
+          elseif ($user_type == "student") {
+            $sql_stud = "INSERT INTO student (user_id) VALUES ('$user_id')";
+            $query_staff = mysqli_query($conn,$sql_stud);
+          }
+        }else {
+          $_SESSION['message'] = "Error occur while signing up please try again.";
+          header("location: ../error.php");
+        }
 
         if ($query){
 
@@ -55,10 +75,10 @@ if($pass=$passcheck)
             $subject = 'Account Verification ( exam-in.com )';
             $message_body = '
             <h3>Hello '.$first_name.',</h3>
-            <p>Thank you for signing up!<br> 
+            <p>Thank you for signing up!<br>
             Please click this link to activate your account:<br></p>
             http://localhost/Exam-IN/login-system/verify.php?email='.$email.'&hash='.$hash;
-            
+
             $mail = new PHPMailer();                                  // Passing `true` enables exceptions
             try{
                 // Server settings
@@ -68,12 +88,12 @@ if($pass=$passcheck)
                 $mail->Username = 'examin.assist@yahoo.com';          // SMTP username
                 $mail->Password = 'ggmldduxvkjyyxjm';                 // SMTP password
                 $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-                $mail->Port = 465;    
-                
+                $mail->Port = 465;
+
                 // Recipients
                 $mail->setFrom('examin.assist@yahoo.com','Exam-In');
                 $mail->addAddress($email);                             // Add a recipient
-                
+
                 // Content
                 $mail->isHTML(true);                                   // Set email format to HTML
                 $mail->Subject = $subject;
@@ -81,9 +101,9 @@ if($pass=$passcheck)
                if (!$mail->send()) {
                     echo "Mail not sent";
                 }else{
-                    
+
                     header("location: ../success.php");
-                }             
+                }
             }
             catch (Exception $e) {
                 echo 'Message could not be sent.';
