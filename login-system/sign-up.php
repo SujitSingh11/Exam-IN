@@ -42,7 +42,7 @@ if($pass=$passcheck)
 
         // active is 0 by DEFAULT (no need to include it here)
         $sql_users = "INSERT INTO users (first_name, last_name, username, email, password, hash, user_type)
-                 VALUES ('$first_name','$last_name','$username','$email','$password', '$hash', '$user_rank')";
+        VALUES ('$first_name','$last_name','$username','$email','$password', '$hash', '$user_rank')";
         // Add user to the users table
         $query = mysqli_query($conn,$sql_users);
 
@@ -50,26 +50,26 @@ if($pass=$passcheck)
         $result_userid = $conn->query("SELECT user_id FROM users WHERE email='$email'");
 
         if ($result_userid->num_rows > 0) {
-          $user_id_fetch = mysqli_fetch_assoc($result_userid);
-          $user_id = (int) $user_id_fetch['user_id'];
-          if ($user_type=="Staff") {
-            $sql_staff = "INSERT INTO staff (user_id) VALUES ($user_id)";
-            $query_staff = mysqli_query($conn,$sql_staff);
-          }
-          elseif ($user_type=="Student"){
-            $sql_stud = "INSERT INTO student (user_id) VALUES ('$user_id')";
-            $query_staff = mysqli_query($conn,$sql_stud);
-          }
+            $user_id_fetch = mysqli_fetch_assoc($result_userid);
+            $user_id = (int) $user_id_fetch['user_id'];
+            if ($user_type=="Staff") {
+                $sql_staff = "INSERT INTO staff (user_id) VALUES ($user_id)";
+                $query_staff = mysqli_query($conn,$sql_staff);
+            }
+            elseif ($user_type=="Student"){
+                $sql_stud = "INSERT INTO student (user_id) VALUES ('$user_id')";
+                $query_staff = mysqli_query($conn,$sql_stud);
+            }
         }else {
-          $_SESSION['message'] = "Error occur while signing up please try again.";
-          header("location: ../error.php");
+            $_SESSION['message'] = "Error occur while signing up please try again.";
+            header("location: ../error.php");
         }
 
         if ($query){
 
             $_SESSION['message'] =
-                     "Confirmation link has been sent to $email, please verify
-                     your account by clicking on the link in the message!";
+            "Confirmation link has been sent to $email, please verify
+            your account by clicking on the link in the message!";
             // Mail format
             $subject = 'Account Verification ( exam-in.com )';
             $message_body = '
@@ -97,7 +97,7 @@ if($pass=$passcheck)
                 $mail->isHTML(true);                                   // Set email format to HTML
                 $mail->Subject = $subject;
                 $mail->Body    = $message_body;
-               if (!$mail->send()) {
+                if (!$mail->send()) {
                     echo "Mail not sent";
                 }else{
 
@@ -113,7 +113,7 @@ if($pass=$passcheck)
             $_SESSION['message'] = 'Registration failed!';
             header("location: ../error.php");
         }
-     }
+    }
 }
 else{
     $_SESSION['message'] = 'Password do not match please try again';
