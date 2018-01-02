@@ -15,7 +15,7 @@
 		<form method="POST" class="m-5" action="test_info.php">
 			<h2>Create Test</h2>
 			<?php
-				if (isset($_SESSION['message'])){
+				if (isset($_SESSION['message']) AND !empty($_SESSION['message'])){
 					echo "<div class='alert alert-warning' role='alert'>".$_SESSION['message']."</div>";
 				}
 				unset($_SESSION["message"]);

@@ -12,9 +12,10 @@ session_start();
     <div>
         <h1>Error</h1>
         <p>
-            <?php 
+            <?php
                 if( isset($_SESSION['message']) AND !empty($_SESSION['message']) ):
-                    echo $_SESSION['message'];    
+                    echo $_SESSION['message'];
+                    unset($_SESSION['message']);     
                 else:
                     header( "location: index.php" );
                 endif;
@@ -22,7 +23,7 @@ session_start();
         </p>
         <a href="index.php"><button class="btn btn-dark">Home</button></a>
     </div>
-    
+
     <?php include 'include/js_include.php' ?>
 </body>
 </html>

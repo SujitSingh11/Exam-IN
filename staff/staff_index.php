@@ -1,4 +1,4 @@
-<?php 
+<?php
 	include '../db/database.php';
 	session_start();
 ?>
@@ -11,10 +11,11 @@
 </head>
 <body>
 	<button id="logout" class="btn btn-outline-danger" type="button">Logout</button>
+	<a href="../test-system/test_form.php">Create Test</a>
 	<script type="text/javascript">
 		document.getElementById("logout").onclick = function () {
-        	location.href = "../index.php";
-   		};
+        	location.href = "../login-system/logout.php";
+   	};
 	</script>
 	<?php include '../include/js_include.php' ?>
 </body>
