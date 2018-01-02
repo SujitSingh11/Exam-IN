@@ -33,10 +33,10 @@ if($pass=$passcheck)
     else {
         // Email doesn't already exist in a database, proceed...
         // Classifying Type of User
-        if ($user_type=="staff") {
+        if ($user_type=="Staff") {
             $user_rank = 1;
         }
-        elseif ($user_type=="student") {
+        elseif ($user_type=="Student") {
             $user_rank = 2;
         }
 
@@ -47,17 +47,16 @@ if($pass=$passcheck)
         $query = mysqli_query($conn,$sql_users);
 
         // Add user to the coorsponding table
-        $result_usertype = $conn->query("SELECT user_id FROM users WHERE email='$email'");
+        $result_userid = $conn->query("SELECT user_id FROM users WHERE email='$email'");
 
-        if ($result_usertype->num_rows > 0) {
-          $user_id_fetch = mysqli_fetch_assoc($result_usertype);
+        if ($result_userid->num_rows > 0) {
+          $user_id_fetch = mysqli_fetch_assoc($result_userid);
           $user_id = (int) $user_id_fetch['user_id'];
-          echo $user_id;
-          if ($user_type == "staff") {
+          if ($user_type=="Staff") {
             $sql_staff = "INSERT INTO staff (user_id) VALUES ($user_id)";
             $query_staff = mysqli_query($conn,$sql_staff);
           }
-          elseif ($user_type == "student") {
+          elseif ($user_type=="Student"){
             $sql_stud = "INSERT INTO student (user_id) VALUES ('$user_id')";
             $query_staff = mysqli_query($conn,$sql_stud);
           }
