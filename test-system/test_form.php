@@ -1,6 +1,6 @@
 <?php
-	include_once '../db/database.php';
-	session_start();
+include_once '../db/database.php';
+session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,10 +15,10 @@
 		<form method="POST" class="m-5" action="test_info.php">
 			<h2>Create Test</h2>
 			<?php
-				if (isset($_SESSION['message']) AND !empty($_SESSION['message'])){
-					echo "<div class='alert alert-warning' role='alert'>".$_SESSION['message']."</div>";
-				}
-				unset($_SESSION["message"]);
+			if (isset($_SESSION['message']) AND !empty($_SESSION['message'])){
+				echo "<div class='alert alert-warning' role='alert'>".$_SESSION['message']."</div>";
+			}
+			unset($_SESSION["message"]);
 			?>
 			<br>
 			<div class="form-group">
@@ -26,30 +26,30 @@
 				<input class="form-control" type="text" name="test_name" placeholder="Test Name">
 				<br>
 				<div class="row">
-				    <div class="col">
-				    	<label>Select Test Stream</label>
-				    	<select id="inputStream" class="form-control" name="test_stream">
-					        <option selected>Choose Stream...</option>
-					        <option>MBA-CET</option>
-					        <option>MCA</option>
-					        <option>MCA-CET</option>
-					        <option>NIMCET</option>
-					        <option>CAT</option>
-				      </select>
-				    </div>
-				    <div class="col">
-				    	<label>Enter Test Subject</label>
-				    	<input type="text" class="form-control" name="test_subject" placeholder="Test Subject">
-				    </div>
-			    </div>
-			    <br>
-			    <div class="row">
-			    	<div class="col-md-4">
-			    		<label style="display: block">Negative Marking</label>
-					    <label class="custom-control custom-checkbox">
-						    <input id="neg-enable" type="checkbox" class="custom-control-input" name="negative_mark">
-						    <span class="custom-control-indicator"></span>
-						    <span class="custom-control-description">Enable Negative Marking</span>
+					<div class="col">
+						<label>Select Test Stream</label>
+						<select id="inputStream" class="form-control" name="test_stream">
+							<option selected>Choose Stream...</option>
+							<option>MBA-CET</option>
+							<option>MCA</option>
+							<option>MCA-CET</option>
+							<option>NIMCET</option>
+							<option>CAT</option>
+						</select>
+					</div>
+					<div class="col">
+						<label>Enter Test Subject</label>
+						<input type="text" class="form-control" name="test_subject" placeholder="Test Subject">
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-md-4">
+						<label style="display: block">Negative Marking</label>
+						<label class="custom-control custom-checkbox">
+							<input id="neg-enable" type="checkbox" class="custom-control-input" name="negative_mark">
+							<span class="custom-control-indicator"></span>
+							<span class="custom-control-description">Enable Negative Marking</span>
 						</label>
 					</div>
 					<div class="col-md-4" id="neg-marking">
@@ -59,12 +59,12 @@
 				</div>
 				<br>
 				<div class="row">
-			    	<div class="col-md-4">
-			    		<label style="display: block">Test Time</label>
-					    <label class="custom-control custom-checkbox">
-						    <input id="test-time-enable" type="checkbox" class="custom-control-input" name="test_time">
-						    <span class="custom-control-indicator"></span>
-						    <span class="custom-control-description">Enable Test Time</span>
+					<div class="col-md-4">
+						<label style="display: block">Test Time</label>
+						<label class="custom-control custom-checkbox">
+							<input id="test-time-enable" type="checkbox" class="custom-control-input" name="test_time">
+							<span class="custom-control-indicator"></span>
+							<span class="custom-control-description">Enable Test Time</span>
 						</label>
 					</div>
 					<div class="col-md-4" id="test-time">
@@ -96,17 +96,17 @@
 
 	<?php include '../include/js_include.php' ?>
 	<script>
-		window.onload = function() {
-		  document.getElementById('neg-marking').style.display = 'none';
-		  document.getElementById('test-time').style.display = 'none';
-		};
+	window.onload = function() {
+		document.getElementById('neg-marking').style.display = 'none';
+		document.getElementById('test-time').style.display = 'none';
+	};
 
-		$('#neg-enable').click(function() {
-			$('#neg-marking')[this.checked ? "show" : "hide"]();
-		});
-		$('#test-time-enable').click(function() {
-			$('#test-time')[this.checked ? "show" : "hide"]();
-		});
-	</script>
+	$('#neg-enable').click(function() {
+		$('#neg-marking')[this.checked ? "show" : "hide"]();
+	});
+	$('#test-time-enable').click(function() {
+		$('#test-time')[this.checked ? "show" : "hide"]();
+	});
+</script>
 </body>
 </html>
