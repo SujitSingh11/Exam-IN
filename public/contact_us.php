@@ -13,8 +13,8 @@
         <input type="text" name="name" placeholder="name"/>
         <label>Email</label>
         <input type="text" name="email" placeholder="email"/>
-        <label></label>
-        <input type="text" name="" placeholder=""/>
+        <label>Subject</label>
+        <label>Decription</label>
       </form>
     </div>
     <?php include '../include/js_include.php' ?>
