@@ -4,7 +4,7 @@ require '../db/database.php';
 session_start();
 
 // Make sure the form is being submitted with method="post"
-if ($_SERVER['REQUEST_METHOD'] == 'POST') { 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Make sure the two passwords match
     if ($_POST['newpassword'] == $_POST['confirmpassword']) {
@@ -15,13 +15,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $email = mysqli_real_escape_string($conn,$_POST['email']);
         $hash = mysqli_real_escape_string($conn,$_POST['hash']);
 
-        $sql = "UPDATE users SET password='$new_password', hash='$hash' WHERE email='$email'";
+        $sql = "UPDATE users SET password='$new_password' WHERE email='$email'";
 
-        if (mysqli_master_query($conn, $sql)) {
+        if (mysqli_query($conn, $sql)) {
 
             $_SESSION['message'] = "Your password has been reset successfully!";
             header("location: ../success.php");
-
         }
     }
     else {

@@ -9,17 +9,15 @@ session_start();
 if( isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && !empty($_GET['hash']) )
 {
     $email = mysqli_real_escape_string($conn,$_GET['email']);
-    $hash = mysqli_real_escape_string($conn,$_GET['hash']); 
-
+    $hash = mysqli_real_escape_string($conn,$_GET['hash']);
     // Make sure user email with matching hash exist
     $result = $conn->query("SELECT * FROM users WHERE email='$email' AND hash='$hash'");
 
     if ( $result->num_rows == 0 )
-    { 
+    {
         $_SESSION['message'] = "You have entered invalid URL for password reset!";
         header("location: ../error.php");
     }
-    
 }
 
 ?>
@@ -48,11 +46,11 @@ if( isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && 
                         <input class="form-control" type="password" name="confirmpassword" required="required">
                     </div>
                     <!-- This input field is needed, to get the email of the user -->
-                    <input type="hidden" name="email" value="<?php $email ?>">    
-                    <input type="hidden" name="hash" value="<?php $hash ?>">    
+                    <input type="hidden" name="email" value="<?php echo $email; ?>">
+                    <input type="hidden" name="hash" value="<?php echo $hash; ?>">
                     <button type="submit" class="btn btn-dark" name="reset-apply">Apply</button>
                     <button type="button" class="btn btn-warning" name="reset-cancel">Cancel</button>
-                    </div>   
+                    </div>
                 </form>
             </div>
         </div>
