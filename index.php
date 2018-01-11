@@ -1,4 +1,4 @@
-<?php 
+<?php
 	require 'db/database.php';
 	session_start();
 ?>
@@ -6,20 +6,20 @@
 <html>
 <head>
 	<?php include 'include/meta_include.php' ?>
-	<title>Exam-IN</title>	
+	<title>Exam-IN</title>
 	<?php include 'include/css_include.php' ?>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body class="bg-light">
-	<?php 
+	<?php
 		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    		if (isset($_POST['login'])) { 
+    		if (isset($_POST['login'])) {
     			//user logging in
-        		require 'login-system/sign-in.php';        
+        		require 'login-system/sign-in.php';
 	    	}
-	    	elseif (isset($_POST['register'])) { 
+	    	elseif (isset($_POST['register'])) {
 	    		//user registering
-	        	require 'login-system/sign-up.php';   
+	        	require 'login-system/sign-up.php';
 	    	}
 		}
 	?>
@@ -42,50 +42,7 @@
 	<?php include 'include/login_modal_include.php' ?>
 
 	<!--Footer-->
-	<footer id="myFooter">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3">
-                    <h2 class="logo"><a href="#"> Exam-in </a></h2>
-                </div>
-                <div class="col-sm-2">
-                    <h5>Get started</h5>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Sign up</a></li>
-                        <li><a href="#">Downloads</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-2">
-                    <h5>About us</h5>
-                    <ul>
-                        <li><a href="#">Company Information</a></li>
-                        <li><a href="#">Contact us</a></li>
-                        <li><a href="#">Reviews</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-2">
-                    <h5>Support</h5>
-                    <ul>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Help desk</a></li>
-                        <li><a href="#">Forums</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-3">
-                    <div class="social-networks">
-                        <a href="#" class="twitter"><i class="fab fa-twitter"></i></i></a>
-                        <a href="#" class="facebook"><i class="fab fa-facebook-square"></i></a>
-                        <a href="#" class="google"><i class="fab fa-google-plus-g"></i></a>
-                    </div>
-                    <button type="button" class="btn btn-default">Contact us</button>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copyright">
-            <p>© 2018 Copyright Text </p>
-        </div>
-    </footer>
+	<?php include 'include/footer_include.php' ?>
 
 	<?php include 'include/js_include.php' ?>
 	<script>
