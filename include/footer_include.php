@@ -34,7 +34,7 @@
                       <a href="#" class="facebook"><i class="fab fa-facebook-square"></i></a>
                       <a href="#" class="google"><i class="fab fa-google-plus-g"></i></a>
                   </div>
-                  <button type="button" class="btn btn-default">Contact us</button>
+                  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#contactus">Contact us</button>
               </div>
           </div>
       </div>

@@ -18,7 +18,7 @@ $user_type = mysqli_real_escape_string($conn,$_POST['user-type']);
 if($pass=$passcheck)
 {   // Password Encription
     $password = $conn->escape_string(password_hash($_POST['password'], PASSWORD_BCRYPT));
-    $hash = $conn->escape_string( md5( rand(0,1000) ) );
+    $hash = $conn->escape_string( md5( rand(0,1000)));
 
     // Check if user with that email already exists
     $result = $conn->query("SELECT * FROM users WHERE email='$email'");

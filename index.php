@@ -40,6 +40,7 @@
 
 	<!--Models-->
 	<?php include 'include/login_modal_include.php' ?>
+	<?php include 'include/contact_us_modal_include.php' ?>
 
 	<!--Footer-->
 	<?php include 'include/footer_include.php' ?>
