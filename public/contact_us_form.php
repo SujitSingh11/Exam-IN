@@ -1,9 +1,5 @@
 <?php
 	include_once '../db/database.php';
-	use PHPMailer\PHPMailer\PHPMailer;
-	use PHPMailer\PHPMailer\Exception;
-	// Load composer's autoloader
-	require '../vendor/autoload.php';
 	session_start();
 
 	// Escape all $_POST variables to protect against SQL injections
