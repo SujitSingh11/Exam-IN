@@ -12,7 +12,7 @@
 				        <div class="form-group">
 				          	<label>Name</label>
 				          	<input class="form-control" type="text" name="name" placeholder="name" required />
-				         	<label>Email</label>
+				         		<label>Email</label>
 				          	<input class="form-control" type="email" name="email" placeholder="email" required />
 				          	<label>Subject</label>
 				          	<select id="inputStream" class="form-control" name="subject" required>
@@ -25,7 +25,7 @@
 				          	<textarea class="form-control" type="text" name="message" placeholder="Discribe your issue" rows="8" required></textarea>
 				          	<br>
 				          	<button class="btn btn-dark" type="submit">Submit</button>
-				        </div>    
+				        </div>
 				    </form>
 				</div>
 			</div>

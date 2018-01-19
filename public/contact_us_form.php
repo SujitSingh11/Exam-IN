@@ -7,10 +7,11 @@
 	$email = mysqli_real_escape_string($conn,$_POST['email']);
 	$subject = mysqli_real_escape_string($conn,$_POST['subject']);
 	$description = mysqli_real_escape_string($conn,$_POST['message']);
+	echo $description;
 
 	// Inserting record into database
 	$sql = "INSERT INTO contact_us (name, email, subject, message)
-			VALUES ('$name','$email', '$subject', '$message')";
+			VALUES ('$name','$email', '$subject', '$description')";
 
 	if (mysqli_query($conn,$sql)) {
 		$_SESSION['message'] = 'Your Query has been submited.! <br> You will hear from us soon.';

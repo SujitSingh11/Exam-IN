@@ -23,6 +23,7 @@
 	    	}
 		}
 	?>
+
 	<!--Navigation-->
 	<?php include 'include/navbar_include.php' ?>
 
@@ -38,14 +39,32 @@
       </div>
     </header>
 
-	<!--Models-->
+	<!--Modals-->
 	<?php include 'include/login_modal_include.php' ?>
 	<?php include 'include/contact_us_modal_include.php' ?>
+
+	<!--Services-->
+	
+	<!--Testimonial-->
+
+	<!--Testimonial-->
 
 	<!--Footer-->
 	<?php include 'include/footer_include.php' ?>
 
 	<?php include 'include/js_include.php' ?>
+	<script>
+	var myVar;
+
+	function loading(){
+			myVar = setTimeout(showPage, 3000);
+	}
+
+	function showPage() {
+		document.getElementById("loader").style.display = "none";
+		document.getElementById("body").style.display = "block";
+	}
+	</script>
 	<script>
 		$(function () {
 		    var iframe = $('.main-content iframe')[0],
