@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 02, 2018 at 06:06 AM
--- Server version: 10.1.26-MariaDB
--- PHP Version: 7.1.9
+-- Generation Time: Jan 19, 2018 at 06:02 PM
+-- Server version: 10.1.19-MariaDB
+-- PHP Version: 5.6.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -31,6 +29,20 @@ SET time_zone = "+00:00";
 CREATE TABLE `admin` (
   `admin_id` smallint(100) NOT NULL,
   `user_id` smallint(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact_us`
+--
+
+CREATE TABLE `contact_us` (
+  `cid` smallint(6) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `subject` varchar(50) NOT NULL,
+  `message` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -61,11 +73,28 @@ CREATE TABLE `student` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `test_bank`
+--
+
+CREATE TABLE `test_bank` (
+  `test_id` smallint(100) NOT NULL,
+  `staff_id` smallint(100) NOT NULL,
+  `test_name` varchar(50) NOT NULL,
+  `test_stream` varchar(50) NOT NULL,
+  `test_subject` varchar(50) NOT NULL,
+  `neg_marks` tinyint(5) DEFAULT NULL,
+  `test_time` tinyint(100) DEFAULT NULL,
+  `test_visibility` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
-  `user_id` smallint(100) NOT NULL,
+  `uid` smallint(100) NOT NULL,
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL,
   `username` varchar(100) NOT NULL,
@@ -77,62 +106,53 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`uid`, `first_name`, `last_name`, `username`, `email`, `password`, `hash`, `user_type`, `active`) VALUES
+(9, 'Sujit', 'Singh', 'sujit', 'sujitkumarsingh29@gmail.com', '$2y$10$Udrc4UwQ3AgJWJjE8QLF0eBQfWVbIg.t5bjB/uNJLHivKw2QQd/s2', 'ab817c9349cf9c4f6877e1894a1faa00', 2, 0);
+
+--
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `admin`
+-- Indexes for table `contact_us`
 --
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`admin_id`);
+ALTER TABLE `contact_us`
+  ADD PRIMARY KEY (`cid`);
 
 --
--- Indexes for table `staff`
+-- Indexes for table `test_bank`
 --
-ALTER TABLE `staff`
-  ADD PRIMARY KEY (`staff_id`);
-
---
--- Indexes for table `student`
---
-ALTER TABLE `student`
-  ADD PRIMARY KEY (`stud_id`);
+ALTER TABLE `test_bank`
+  ADD PRIMARY KEY (`test_id`);
 
 --
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_id`);
+  ADD PRIMARY KEY (`uid`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT for table `contact_us`
 --
-ALTER TABLE `admin`
-  MODIFY `admin_id` smallint(100) NOT NULL AUTO_INCREMENT;
-
+ALTER TABLE `contact_us`
+  MODIFY `cid` smallint(6) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `staff`
+-- AUTO_INCREMENT for table `test_bank`
 --
-ALTER TABLE `staff`
-  MODIFY `staff_id` smallint(100) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `student`
---
-ALTER TABLE `student`
-  MODIFY `stud_id` smallint(100) NOT NULL AUTO_INCREMENT;
-
+ALTER TABLE `test_bank`
+  MODIFY `test_id` smallint(100) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` smallint(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
-COMMIT;
-
+  MODIFY `uid` smallint(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
