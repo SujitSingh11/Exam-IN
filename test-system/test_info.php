@@ -2,7 +2,7 @@
 // Get Test Information From Test form
 require '../db/database.php';
 //  if ($_SESSION['logged_in'] == true) {
-# code...
+    # code...
 //  }
 // Escape all $_POST variables to protect against SQL injections
 $test_name = mysqli_real_escape_string($conn,$_POST['test_name']);
