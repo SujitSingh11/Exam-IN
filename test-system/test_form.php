@@ -41,6 +41,10 @@ session_start();
 						<label>Enter Test Subject</label>
 						<input type="text" class="form-control" name="test_subject" placeholder="Test Subject">
 					</div>
+					<div class="col">
+						<label>Number of Test Questions</label>
+						<input type="number" min="1" max="30" class="form-control" name="number_questions" placeholder="eg. 10,15,20">
+					</div>
 				</div>
 				<br>
 				<div class="row">
