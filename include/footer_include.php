@@ -2,7 +2,7 @@
       <div class="container">
           <div class="row">
               <div class="col-sm-3">
-                  <h2 class="logo"><a href="#"> Exam-in </a></h2>
+                  <img src="Logo.svg" width="250" height="100" alt="">
               </div>
               <div class="col-sm-2">
                   <h5>Get started</h5>

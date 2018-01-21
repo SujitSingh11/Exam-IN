@@ -1,5 +1,7 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-light" >
-		<a class="navbar-brand" href="#"><b>Exam-in</b></a>
+		<a class="navbar-brand" href="#">
+			<img src="Logo.svg" width="180" height="60" alt="">
+		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -12,12 +14,9 @@
 		      	<a class="nav-item nav-link" href="#">Contact</a>
 			</div>
 
-		<div class="form-inline my-2 my-lg-0">
-			<button type="button" class="btn btn-outline-dark m-2" data-toggle="modal" data-target="#signupmodal">
-				Sign-up
-			</button>
-			<button type="button" class="btn btn-outline-dark m-2" data-toggle="modal" data-target="#signinmodal">
-				Sign-in
-			</button>
-		</div></div>
+			<div class="form-inline my-2 my-lg-0">
+				<button type="button" class="btn btn-outline-dark m-2" data-toggle="modal" data-target="#signupmodal">Sign-up</button>
+				<button type="button" class="btn btn-outline-dark m-2" data-toggle="modal" data-target="#signinmodal">Sign-in</button>
+			</div>
+		</div>
 </nav>

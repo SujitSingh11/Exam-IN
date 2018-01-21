@@ -9,29 +9,33 @@
     <meta charset="utf-8">
     <title>Create Test</title>
     <?php  include '../include/css_include.php' ?>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/master.css">
   </head>
   <body>
-    <!--Sidenav-->
-    <nav>
-        <!--User Information-->
+    <!--Grid-->
+    <div class="grid">
 
-        <!--Links-->
+        <!--Sidenav-->
+        <div class="sidenav">
+            <!--User Information-->
 
-        <!--Function Buttons-->
-    </nav>
+            <!--Links-->
 
-    <!--Create Test Form-->
-    <div class="">
-
-    </div>
-
-    <!--Footer-->
-    <footer>
-        <div class="footer-copyright">
-            <p>© 2018 Copyright Text </p>
+            <!--Function Buttons-->
         </div>
-    </footer>
+
+        <!--Create Test Form-->
+        <div class="create-test">
+
+        </div>
+
+        <!--Footer-->
+        <footer>
+            <div class="footer-copyright">
+                <p>© 2018 Copyright Text </p>
+            </div>
+        </footer>
+    </div>
 
     <?php include '../include/js_include.php' ?>
   </body>

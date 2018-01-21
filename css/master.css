@@ -1,0 +1,37 @@
+body {
+	background-color: #f8f9fa !important;
+}
+
+.grid {
+	grid-template-columns: 20% 1fr;
+	grid-template-rows: auto auto;
+	grid-template-areas:
+	"sidenav create"
+	"sidenav footer";
+}
+.sidenav {
+	grid-area: sidenav;
+	padding: 50px;
+	background-color: red;
+}
+.create-test {
+	grid-area: create;
+	padding: 50px;
+	background-color: green;
+}
+footer {
+	grid-area: footer;
+    background-color: #ffffff;
+    color: white;
+}
+footer .footer-copyright {
+    background-color: #333333;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: center;
+}
+
+footer .footer-copyright p {
+    margin: 10px;
+    color: #ccc;
+}
