@@ -7,7 +7,7 @@
 <head>
 	<?php include 'include/meta_include.php' ?>
 	<title>Exam-IN</title>
-	<link rel="shortcut icon" href="Logo-title.ico" />
+	<link rel="shortcut icon" href="Logo-title.ico">
 	<?php include 'include/css_include.php' ?>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>

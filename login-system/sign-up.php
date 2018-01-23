@@ -58,7 +58,7 @@ if($pass=$passcheck)
             }
             elseif ($user_type=="Student"){
                 $sql_stud = "INSERT INTO student (user_id) VALUES ('$user_id')";
-                $query_staff = mysqli_query($conn,$sql_stud);
+                $query_student = mysqli_query($conn,$sql_stud);
             }
         }else {
             $_SESSION['message'] = "Error occur while signing up please try again.";

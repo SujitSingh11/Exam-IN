@@ -1,9 +1,11 @@
 <?php
 // Get Test Information From Test form
 require '../db/database.php';
+session_start();
 //  if ($_SESSION['logged_in'] == true) {
     # code...
 //  }
+$_SESSION['staff_id'] = 4;
 // Escape all $_POST variables to protect against SQL injections
 $test_name = mysqli_real_escape_string($conn,$_POST['test_name']);
 $test_stream = mysqli_real_escape_string($conn,$_POST['test_stream']);
@@ -37,9 +39,12 @@ if ( $result->num_rows > 0 ) {
     header('location : test_form.php');
 }else {
     // Insert test information in test bank
-    $sql = "INSERT INTO users (staff_id, test_name, test_stream, test_subject, number_of_questions neg_marks, test_time, test_visibility)
+    $sql = "INSERT INTO test_bank (staff_id, test_name, test_stream, test_subject, number_of_questions, neg_marks, test_time, test_visibility)
     VALUES ('{$_SESSION['staff_id']}','$test_name','$test_stream','$test_subject','$number_of_questions','$neg_marks','$test_time','$test_visibility')";
+
     $query = mysqli_query($conn,$sql);
+    header('locaton: create_test_form.php');
+
 }
 
 ?>

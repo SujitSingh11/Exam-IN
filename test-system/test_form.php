@@ -15,10 +15,10 @@ session_start();
 		<form method="POST" class="m-5" action="test_info.php">
 			<h2>Create Test</h2>
 			<?php
-			if (isset($_SESSION['message']) AND !empty($_SESSION['message'])){
-				echo "<div class='alert alert-warning' role='alert'>".$_SESSION['message']."</div>";
-			}
-			unset($_SESSION["message"]);
+				if (isset($_SESSION['message']) AND !empty($_SESSION['message'])){
+					echo "<div class='alert alert-warning' role='alert'>".$_SESSION['message']."</div>";
+				}
+				unset($_SESSION["message"]);
 			?>
 			<br>
 			<div class="form-group">
@@ -43,7 +43,7 @@ session_start();
 					</div>
 					<div class="col">
 						<label>Number of Test Questions</label>
-						<input type="number" min="1" max="30" class="form-control" name="number_questions" placeholder="eg. 10,15,20">
+						<input type="number" min="1" max="30" class="form-control" name="number_of_questions" placeholder="eg. 10,15,20">
 					</div>
 				</div>
 				<br>
