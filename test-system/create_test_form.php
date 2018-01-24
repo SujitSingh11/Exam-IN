@@ -4,11 +4,12 @@
     //  if ($_SESSION['logged_in'] == true) {
         # code...
     //  }
-    $_SESSION['test_name'] = 'Class Test 1';
     $test_name = $_SESSION['test_name'];
     $sql = "SELECT * FROM test_bank WHERE test_name='$test_name'";
     $result = mysqli_query($conn,$sql);
     $test = mysqli_fetch_assoc($result);
+    $_SESSION['number_of_questions'] = $test['number_of_questions'];
+    $_SESSION['test_id'] = $test['test_id'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -33,12 +34,12 @@
         </nav>
 
         <!--Create Test Form-->
-        <div class="create-test">
+        <div class="main">
             <div class="container">
                 <div class="mx-5">
                     <h2><?php echo $test['test_name'].' - '.$test['test_stream']; ?></h2>
                     <h4><?php echo $test['test_subject']; ?></h4>
-                    <form class="" action="get_questions.php" method="POST">
+                    <form id="question" class="" action="create_test.php" method="POST">
                         <?php
                             for ($i=0; $i < $test['number_of_questions']; $i++) {
                                 echo"<div class='card'>
@@ -76,11 +77,31 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>";
+                                    </div>
+                                    <br/>";
                             }
                         ?>
-                        <button class="btn btn-dark" type="submit">Submit</button>
+                        <button class="btn btn-dark" type="button" data-toggle="modal" data-target="#sure">Submit</button>
                     </form>
+                </div>
+            </div>
+        </div>
+        <!--Modals-->
+        <div id="sure" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+    			<div class="modal-content">
+    				<div class="modal-header">
+                        <h5 class="modal-title">Are you Sure.?</h5>
+    					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    					<span aria-hidden="true">&times;</span>
+    					</button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Click 'Commit' if you want to Submit the test,<br></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button form="question" class="btn btn-dark" type="submit">Commit</button>
+                    </div>
                 </div>
             </div>
         </div>

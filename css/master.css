@@ -6,19 +6,18 @@ body {
 	grid-template-columns: 20% 1fr;
 	grid-template-rows: auto auto;
 	grid-template-areas:
-	"sidenav create"
+	"sidenav main"
 	"sidenav footer";
 }
 .sidenav {
 	overflow-x: hidden;
   	overflow-y: auto;
 	grid-area: sidenav;
-	padding: 50px;
+	padding: 50px; 
 	background-color: #333333;
 }
-.create-test {
-	grid-area: create;
-	padding: 50px;
+.main {
+	grid-area: main;
 	background-color: #f9f9f9;
 }
 .question {
