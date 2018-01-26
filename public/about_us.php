@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
+    <link rel="shortcut icon" href="../Logo-title.ico">
     <link rel="stylesheet" href="../css/about-us.css">
     <link rel="stylesheet" href="../css/demo.css">
     <script src="../js/modernizr.custom.js"></script>

@@ -49,7 +49,7 @@ html, body, body {
 	left: 0;
 	background: #2f2f2f;
 	color: #fff;
-	outline: 1px solid #232222; /* avoid gap */
+	outline: 1px solid #414242; /* avoid gap */
 }
 
 .side-right {
@@ -76,7 +76,7 @@ html, body, body {
 	width: 200px;
 	height: 200px;
 	border-radius: 50%;
-	background: #080c29;
+	background: #6f6e6e;
 }
 
 .profile img {
@@ -193,8 +193,8 @@ html, body, body {
 
 .page-left {
 	left: 0;
-	outline: 5px solid #34495e; /* avoid rounding gaps */
-	background: #34495e;
+	outline: 5px solid #414242; /* avoid rounding gaps */
+	background: #414242;
 	color: #fff;
 	text-align: right;
 	-webkit-transform: translateX(-100%);
@@ -202,7 +202,7 @@ html, body, body {
 }
 
 .splitlayout.open-left {
-	background: #34495e;
+	background: #414242;
 }
 
 /* Inner page content */

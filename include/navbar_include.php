@@ -10,7 +10,7 @@
 				<a class="nav-item nav-link" href="#">Home</a>
 		 		<a class="nav-item nav-link" href="#">Libary</a>
 		      	<a class="nav-item nav-link" href="#">Services</a>
-		      	<a class="nav-item nav-link" href="#">About</a>
+		      	<a class="nav-item nav-link" href="public/about_us.php">About Us</a>
 		      	<a class="nav-item nav-link" href="#">Contact</a>
 			</div>
 
