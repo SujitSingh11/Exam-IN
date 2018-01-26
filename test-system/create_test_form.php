@@ -23,14 +23,28 @@
   <body>
     <!--Grid-->
     <div class="grid">
-
         <!--Sidenav-->
-        <nav class="sidenav navbar">
+        <nav class="sidenav navbar navbar-light">
+            <div class="container">
             <!--User Information-->
-
             <!--Links-->
-
-            <!--Function Buttons-->
+                <ul class="navbar-nav justify-content-center flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../staff/staff_index.php">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../test-system/test_form.php">Create Test</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../test-system/test_bank.php">Test Bank</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Message</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="logout" href="#" class="nav-link">Logout</a>
+                    </li>
+                </ul>
         </nav>
 
         <!--Create Test Form-->

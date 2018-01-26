@@ -1,3 +1,11 @@
+<?php
+    include_once '../db/database.php';
+    session_start();
+    //  if ($_SESSION['logged_in'] == true) {
+        # code...
+    //  }
+
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,22 +17,41 @@
     </head>
     <body>
         <div class="grid">
-            <nav class="sidenav">
-
+            <!--Sidenav-->
+            <nav class="sidenav navbar navbar-light">
+                <div class="container">
+                <!--User Information-->
+                <!--Links-->
+    				<ul class="navbar-nav justify-content-center flex-column">
+    					<li class="nav-item">
+    						<a class="nav-link" href="../staff/staff_index.php">Home</a>
+    					</li>
+    					<li class="nav-item">
+    						<a class="nav-link" href="../test-system/test_form.php">Create Test</a>
+    					</li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../test-system/test_bank.php">Test Bank</a>
+                        </li>
+    					<li class="nav-item">
+    						<a class="nav-link" href="#">Message</a>
+    					</li>
+    					<li class="nav-item">
+    						<a id="logout" href="#" class="nav-link">Logout</a>
+    					</li>
+    				</ul>
             </nav>
             <div class="main">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-md-3">
-                            
-                        </div>
-                        <div class="col-md-3">
+                    <?php
+                    for ($i=0; $i < ; $i++) {
 
-                        </div>
-                        <div class="col-md-3">
+                        echo "  <div class='row'>
+                                    <div class='col-md-3'>
 
-                        </div>
-                    </div>
+                                    </div>
+                                </div>";
+                    }
+                    ?>
                 </div>
             </div>
             <footer>
