@@ -5,7 +5,7 @@ body {
 .grid {
 	display: grid;
 	grid-template-columns: 20% 1fr;
-	grid-template-rows: auto auto;
+	grid-template-rows: 1fr;
 	grid-template-areas:
 	"sidenav main"
 	"sidenav footer";
