@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="../css/master.css">
 </head>
 <body>
+	<?php include '../include/create_test_modal_include.php' ?>
 	<div class="grid">
 		<!--Sidenav-->
 		<nav class="sidenav navbar navbar-light">
@@ -22,7 +23,7 @@
 						<a class="nav-link" href="../staff/staff_index.php">Home</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="../test-system/test_form.php">Create Test</a>
+						<a class="nav-link" data-toggle="modal" data-target="#CreateTest">Create Test</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="../test-system/test_bank.php">Test Bank</a>
@@ -46,11 +47,7 @@
             </div>
 		</footer>
 	</div>
-	<script>
-		document.getElementById("logout").onclick = function () {
-        	location.href = "../login-system/logout.php";
-   	};
-	</script>
 	<?php include '../include/js_include.php' ?>
+	<?php include '../include/staff_master_js_include.php' ?>
 </body>
 </html>

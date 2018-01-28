@@ -111,6 +111,6 @@ session_start();
 	$('#test-time-enable').click(function() {
 		$('#test-time')[this.checked ? "show" : "hide"]();
 	});
-</script>
+	</script>
 </body>
 </html>

@@ -4,7 +4,6 @@
     //  if ($_SESSION['logged_in'] == true) {
         # code...
     //  }
-
 ?>
 <!DOCTYPE html>
 <html>
