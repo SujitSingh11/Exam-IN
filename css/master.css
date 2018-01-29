@@ -1,62 +1,8 @@
-body {
-	background-color: #f8f9fa !important;
+.card{
+    -webkit-box-shadow: 4px 7px 16px -5px rgba(0,0,0,0.61);
+    -moz-box-shadow: 4px 7px 16px -5px rgba(0,0,0,0.61);
+    box-shadow: 4px 7px 16px -5px rgba(0,0,0,0.61);
 }
-
-.grid {
-	display: grid;
-	grid-template-columns: 20% 1fr;
-	grid-template-rows: 1fr;
-	grid-template-areas:
-	"sidenav main"
-	"sidenav footer";
-}
-.sidenav {
-	overflow-x: hidden;
-  	overflow-y: auto;
-	grid-area: sidenav;
-	width: 100%;
-
-}
-.nav-item {
-	border-top: 1px solid #eee;
-	border-bottom: 1px solid #eee;
-	width: 100%;
-
-}
-.nav-link {
-	font-size: 20px;
-	font-weight: 100;
-}
-.main {
-	grid-area: main;
-	background-color: #f9f9f9;
-}
-.question {
-	font-size: 20px;
-}
-.rel {
-	position: relative;
-}
-.abs {
-	position: absolute;
-	bottom: 5px;
-	left: 35%;
-}
-footer {
-	grid-area: footer;
-    background-color: #ffffff;
-    color: white;
-}
-footer .footer-copyright {
-    background-color: #333333;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    text-align: center;
-}
-
-footer .footer-copyright p {
-    margin: 10px;
-	font-size: 18px;
-	font-weight: 100;
-    color: #ccc;
+.navbar .navbar-brand {
+    font-weight: 100;
 }

@@ -9,13 +9,7 @@
 				</button>
 			</div>
             <div class="modal-body flex-column">
-                <form method="POST" class="m-2" action="../test_system/test_info.php">
-                    <?php
-                    if (isset($_SESSION['message']) AND !empty($_SESSION['message'])){
-                        echo "<div class='alert alert-warning' role='alert'>".$_SESSION['message']."</div>";
-                    }
-                    unset($_SESSION["message"]);
-                    ?>
+                <form method="POST" class="m-2" action="../staff/create_test_script.php">
                     <br>
                     <div class="form-group">
                         <label>Enter Test Name</label>

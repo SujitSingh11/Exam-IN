@@ -19,6 +19,7 @@
             VALUES('$test_id','$question','$option_1','$option_2','$option_3','$option_4','$correct_option','$marks')";
             $result = mysqli_query($conn,$sql);
         }
-        header("location: ../staff/staff_index.php");
+        $_SESSION['message'] = 'Test been Successfully Created.! To review your Test check out MY Tests tab.';
+        header("location: staff_index.php");
     }
 ?>

@@ -4,61 +4,70 @@
     //  if ($_SESSION['logged_in'] == true) {
         # code...
     //  }
+    $sql = "SELECT * FROM test_bank";
+    $result = mysqli_query($conn,$sql);
 ?>
 <!DOCTYPE html>
 <html>
-    <head>
-        <?php  include '../include/meta_include.php' ?>
-        <meta charset="utf-8">
-        <title>Test Bank</title>
-        <?php  include '../include/css_include.php' ?>
-        <link rel="stylesheet" href="../css/master.css">
-    </head>
-    <body>
-        <div class="grid">
-            <!--Sidenav-->
-            <nav class="sidenav navbar navbar-light">
-                <div class="container">
-                <!--User Information-->
-                <!--Links-->
-    				<ul class="navbar-nav justify-content-center flex-column">
-    					<li class="nav-item">
-    						<a class="nav-link" href="../staff/staff_index.php">Home</a>
-    					</li>
-    					<li class="nav-item">
-    						<a class="nav-link" href="../test-system/test_form.php">Create Test</a>
-    					</li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../test-system/test_bank.php">Test Bank</a>
-                        </li>
-    					<li class="nav-item">
-    						<a class="nav-link" href="#">Message</a>
-    					</li>
-    					<li class="nav-item">
-    						<a id="logout" href="#" class="nav-link">Logout</a>
-    					</li>
-    				</ul>
-            </nav>
-            <div class="main">
-                <div class="container">
-                    <?php
-                    for ($i=0; $i < ; $i++) {
+<head>
+    <?php  include '../include/meta_include.php' ?>
+    <meta charset="utf-8">
+    <title>Test Bank</title>
+    <?php  include '../include/css_include.php' ?>
+    <link rel="stylesheet" href="../css/master.css">
+    <?php  include '../include/staff_navbar_css.php' ?>
+</head>
+<body>
+    <!--Navbar-->
+    <?php  include '../include/staff_navbar_include.php' ?>
 
-                        echo "  <div class='row'>
-                                    <div class='col-md-3'>
-
+    <!--Test Bank-->
+    <div class="content-wrapper my-5">
+        <div class="container my-3">
+            <h2 class="ml-5">Test Bank</h2>
+            <?php
+                echo "<div class='row mx-5'>";
+                if (mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        if ($row['neg_marks'] > 0) {
+                            $neg_marks = 'YES';
+                        }else {
+                            $neg_marks = 'NO';
+                        }
+                        echo"<div class='col-md-4 my-4'>
+                                <div class='card' style='width: 18rem;'>
+                                    <div class='card-body'>
+                                        <h5 class='card-title'>".$row['test_name']."</h5>
+                                        <h6 class='card-subtitle mb-1 text-muted'>".$row['test_stream']."</h6>
+                                        <h7 class='card-subtitle mb-3 text-muted'>".$row['test_subject']."</h7>
+                                        <p class='card-text'>Number of questions: ".$row['number_of_questions']."</p>
+                                        <p class='card-text'>Negative Marks: ".$neg_marks."</p>
+                                        <p class='card-text'>Wrong Option: ".$row['neg_marks']."</p>
+                                        <p class='card-text'>Test Time: ".$row['test_time']."</p>
+                                        <a href='#' class='card-link'>Review</a>
                                     </div>
-                                </div>";
+                                </div>
+                            </div>";
                     }
-                    ?>
-                </div>
-            </div>
-            <footer>
-                <div class="footer-copyright">
-                    <p>© 2018 Copyright Exam-in</p>
-                </div>
-            </footer>
+                    echo "</div>";
+                }
+            ?>
         </div>
-        <?php  include '../include/js_include.php' ?>
-    </body>
+    </div>
+    <!--Footer-->
+    <footer class="sticky-footer">
+        <div class="container">
+            <div class="text-center">
+                <small>Copyright © Exam-in 2018</small>
+            </div>
+        </div>
+    </footer>
+    <?php  include '../include/create_test_modal_include.php' ?>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fa fa-angle-up"></i>
+    </a>
+    <?php include '../include/js_include.php' ?>
+    <?php include '../include/staff_master_js_include.php' ?>
+</body>
 </html>

@@ -36,7 +36,7 @@ $result = $conn->query("SELECT * FROM test_bank WHERE test_name='$test_name'");
 
 if ( $result->num_rows > 0 ) {
     $_SESSION['message'] = 'A test with that test name already exists..! <br> Please change the name of the test';
-    header("location: test_form.php");
+    header("location: staff_index.php");
 }else {
     // Insert test information in test bank
     $sql = "INSERT INTO test_bank (staff_id, test_name, test_stream, test_subject, number_of_questions, neg_marks, test_time, test_visibility)
@@ -53,7 +53,7 @@ if ( $result->num_rows > 0 ) {
     $_SESSION['number_of_questions'] = $test['number_of_questions'];
 
     //Re-direct to Create test
-    header("location: create_test_form.php");
+    header("location: test_questions.php");
 }
 
 ?>
