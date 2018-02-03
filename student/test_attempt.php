@@ -23,6 +23,9 @@
 				}
 				unset($_SESSION["message"]);
 			?>
+            <!--Attempt Test-->
+
+
 		</div>
 	</div>
 
@@ -41,6 +44,6 @@
     </a>
 
 	<?php include '../include/js_include.php' ?>
-	<?php include '../include/student_js_include.php' ?>
+	<?php include '../include/staff_master_js_include.php' ?>
 </body>
 </html>

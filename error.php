@@ -1,5 +1,5 @@
 <?php
-session_start();
+    session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,7 +15,7 @@ session_start();
             <?php
                 if( isset($_SESSION['message']) AND !empty($_SESSION['message']) ):
                     echo $_SESSION['message'];
-                    unset($_SESSION['message']);     
+                    unset($_SESSION['message']);
                 else:
                     header( "location: index.php" );
                 endif;
