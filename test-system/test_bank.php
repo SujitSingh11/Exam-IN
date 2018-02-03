@@ -4,9 +4,9 @@
     #  if ($_SESSION['logged_in'] == true) {
         # code...
     # }
-    $sql = "SELECT * FROM test_bank ";
+    $sql = "SELECT * FROM test_bank";
     $result = mysqli_query($conn,$sql);
-    $_SESSION['user_type']= 2;
+    $_SESSION['user_type']= 1;
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,7 +24,7 @@
         if ($_SESSION['user_type']==1) {
             include '../include/staff_navbar_include.php';
         }
-        if ($_SESSION['user_type']==2) {
+        elseif ($_SESSION['user_type']==2) {
             include '../include/student_navbar_include.php';
         }
     ?>
@@ -47,7 +47,7 @@
                                     if ($_SESSION['user_type']==1) {
                                         echo "<form class='card-body' action='test_review.php' method='POST'>";
                                     }
-                                    if ($_SESSION['user_type']==2) {
+                                    elseif ($_SESSION['user_type']==2) {
                                         echo "<form class='card-body' action='../student/test_attempt.php' method='POST'>";
                                     }
                                 echo"   <form class='card-body' action='test_review.php' method='POST'>
@@ -63,7 +63,7 @@
                                         if ($_SESSION['user_type']==1) {
                                             echo "<button type='submit' class='btn btn-outline-warning'>Review</button>";
                                         }
-                                        if ($_SESSION['user_type']==2) {
+                                        elseif ($_SESSION['user_type']==2) {
                                             echo "<button type='submit' class='btn btn-outline-success'>Attempt</button>";
                                         }
                             echo"   </form>

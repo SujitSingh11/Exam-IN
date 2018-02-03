@@ -6,7 +6,7 @@
     //  }
     $test_name = $_POST['test_name'];
     $test_id = $_POST['test_id'];
-    $sql = "SELECT * FROM test_question WHERE test_id = $test_id";
+    $sql = "SELECT * FROM test_questions WHERE test_id = $test_id";
     $result = mysqli_query($conn,$sql);
 ?>
 <!DOCTYPE html>
@@ -26,14 +26,57 @@
     <!--Test Review-->
     <div class="content-wrapper my-5">
         <div class="container my-3">
-            <div class="card">
+            <div class="card mb-5">
                 <h5 class="card-header">Test Review</h5>
                 <div class="card-body">
                     <h5 class="card-title"><?php echo $test_name; ?></h5>
                     <!--Test Review-->
-
                     <?php
-
+                        $i = 0;
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            if ($row['correct_option'] == 1) {
+                                $correct_option = "A";
+                            }
+                            elseif ($row['correct_option'] == 2) {
+                                $correct_option = "B";
+                            }
+                            elseif ($row['correct_option'] == 3) {
+                                $correct_option = "C";
+                            }
+                            elseif ($row['correct_option'] == 4) {
+                                $correct_option = "D";
+                            }
+                            echo "<div class='card my-3'>
+                                    <h5 class='card-header'>".($i+1).". ".$row['question']."</h5>
+                                        <div class='card-body'>
+                                            <div class='row'>
+                                                <div class='mx-4 col-md-5'>
+                                                    <div class='row'>
+                                                        <p>A. ".$row['option_1']."</p>
+                                                    </div>
+                                                    <div class='row'>
+                                                        <p>B. ".$row['option_2']."</p>
+                                                    </div>
+                                                    <div class='row'>
+                                                        <p>C. ".$row['option_3']."</p>
+                                                    </div>
+                                                    <div class='row'>
+                                                        <p>D. ".$row['option_4']."</p>
+                                                    </div>
+                                                </div>
+                                                <div class='offset-2 col-md-4'>
+                                                    <div class='row'>
+                                                        <p>Marks : ".$row['marks']."</p>
+                                                    </div>
+                                                    <div class='row'>
+                                                        <p>Correct Option : ".$correct_option."</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>";
+                            $i+=1;
+                        }
                     ?>
                 </div>
             </div>

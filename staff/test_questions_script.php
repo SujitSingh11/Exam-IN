@@ -15,8 +15,20 @@
             $option_4 = mysqli_real_escape_string($conn,$_POST['option_4'][$i]);
             $correct_option = mysqli_real_escape_string($conn,$_POST['correct_option'][$i]);
             $marks = mysqli_real_escape_string($conn,$_POST['marks'][$i]);
+            if ($correct_option == 'Option 1') {
+                $correct_option_code = 1;
+            }
+            elseif ($correct_option == 'Option 2') {
+                $correct_option_code = 2;
+            }
+            elseif ($correct_option == 'Option 3') {
+                $correct_option_code = 3;
+            }
+            elseif ($correct_option == 'Option 4') {
+                $correct_option_code = 4;
+            }
             $sql = "INSERT INTO test_questions (test_id, question, option_1, option_2, option_3, option_4, correct_option, marks)
-            VALUES('$test_id','$question','$option_1','$option_2','$option_3','$option_4','$correct_option','$marks')";
+            VALUES('$test_id','$question','$option_1','$option_2','$option_3','$option_4','$correct_option_code','$marks')";
             $result = mysqli_query($conn,$sql);
         }
         $_SESSION['message'] = 'Test been Successfully Created.! To review your Test check out MY Tests tab.';
