@@ -1,7 +1,6 @@
 <?php
     include 'db/database.php';
     session_start();
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,7 +17,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Class Test 1</h5>
                     <div class="card">
-                        
+
 
                     </div>
                 </div>

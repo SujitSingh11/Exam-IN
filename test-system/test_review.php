@@ -14,7 +14,7 @@
 <head>
     <?php  include '../include/meta_include.php' ?>
     <meta charset="utf-8">
-    <title>Test Bank</title>
+    <title>Test Review</title>
     <?php  include '../include/css_include.php' ?>
     <link rel="stylesheet" href="../css/master.css">
     <?php  include '../include/staff_navbar_css.php' ?>
@@ -30,8 +30,12 @@
                 <h5 class="card-header">Test Review</h5>
                 <div class="card-body">
                     <h5 class="card-title"><?php echo $test_name; ?></h5>
-                    <!--Test Review-->
                     <?php
+                        if (isset($_SESSION['message']) AND !empty($_SESSION['message'])){
+                            echo "<div class='alert alert-warning' role='alert'>".$_SESSION['message']."</div><br>";
+                        }
+                        unset($_SESSION["message"]);
+
                         $i = 0;
                         while ($row = mysqli_fetch_assoc($result)) {
                             if ($row['correct_option'] == 1) {
@@ -48,34 +52,34 @@
                             }
                             echo "<div class='card my-3'>
                                     <h5 class='card-header'>".($i+1).". ".$row['question']."</h5>
-                                        <div class='card-body'>
-                                            <div class='row'>
-                                                <div class='mx-4 col-md-5'>
-                                                    <div class='row'>
-                                                        <p>A. ".$row['option_1']."</p>
-                                                    </div>
-                                                    <div class='row'>
-                                                        <p>B. ".$row['option_2']."</p>
-                                                    </div>
-                                                    <div class='row'>
-                                                        <p>C. ".$row['option_3']."</p>
-                                                    </div>
-                                                    <div class='row'>
-                                                        <p>D. ".$row['option_4']."</p>
-                                                    </div>
+                                    <div class='card-body'>
+                                        <div class='row'>
+                                            <div class='mx-4 col-md-5'>
+                                                <div class='row'>
+                                                    <p>A. ".$row['option_1']."</p>
                                                 </div>
-                                                <div class='offset-2 col-md-4'>
-                                                    <div class='row'>
-                                                        <p>Marks : ".$row['marks']."</p>
-                                                    </div>
-                                                    <div class='row'>
-                                                        <p>Correct Option : ".$correct_option."</p>
-                                                    </div>
+                                                <div class='row'>
+                                                    <p>B. ".$row['option_2']."</p>
+                                                </div>
+                                                <div class='row'>
+                                                    <p>C. ".$row['option_3']."</p>
+                                                </div>
+                                                <div class='row'>
+                                                    <p>D. ".$row['option_4']."</p>
+                                                </div>
+                                            </div>
+                                            <div class='offset-2 col-md-4'>
+                                                <div class='row'>
+                                                    <p><i>Marks </i>: ".$row['marks']."</p>
+                                                </div>
+                                                <div class='row'>
+                                                    <p><i>Correct Option </i>: ".$correct_option."</p>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>";
-                            $i+=1;
+                                    </div>
+                                </div>";
+                            $i++;
                         }
                     ?>
                 </div>
