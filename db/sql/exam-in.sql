@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.7.4
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 03, 2018 at 12:10 PM
--- Server version: 10.1.19-MariaDB
--- PHP Version: 5.6.28
+-- Generation Time: Feb 03, 2018 at 08:22 PM
+-- Server version: 10.1.26-MariaDB
+-- PHP Version: 7.1.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -89,6 +91,19 @@ INSERT INTO `student` (`stud_id`, `user_id`, `interest`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `test_attempted`
+--
+
+CREATE TABLE `test_attempted` (
+  `attempt_id` smallint(6) NOT NULL,
+  `result_id` smallint(50) NOT NULL,
+  `question_id` smallint(50) NOT NULL,
+  `answer` tinyint(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `test_bank`
 --
 
@@ -109,7 +124,8 @@ CREATE TABLE `test_bank` (
 --
 
 INSERT INTO `test_bank` (`test_id`, `staff_id`, `test_name`, `test_stream`, `test_subject`, `number_of_questions`, `neg_marks`, `test_time`, `test_visibility`) VALUES
-(7, 4, 'Class-Test 4', 'MCA-CET', 'Computer Awareness', 5, 1, 60, 0);
+(7, 4, 'Class-Test 4', 'MCA-CET', 'Computer Awareness', 5, 1, 60, 0),
+(8, 4, 'Tutorial Test 1', 'MBA-CET', 'Computer Awareness', 4, 2, 40, 0);
 
 -- --------------------------------------------------------
 
@@ -134,11 +150,32 @@ CREATE TABLE `test_questions` (
 --
 
 INSERT INTO `test_questions` (`question_id`, `test_id`, `question`, `option_1`, `option_2`, `option_3`, `option_4`, `correct_option`, `marks`) VALUES
-(1, 7, 'asdasdasd', 'asdasd', 'asdasd', 'asdasdsd', 'asdasdasd', 0, 5),
-(2, 7, 'asdasd', 'sadasd', 'dasdsd', 'dassdaasd', 'dxzsadaws', 0, 5),
-(3, 7, 'khgjh', 'gj', 'hg', 'jhgj', 'hgjhjhg', 0, 5),
-(4, 7, 'sdfdsfdsf', 'qsdfsdfsd', 'sdfsdfsd', 'sdfsdfsdf', 'dsfsdfsd', 0, 5),
-(5, 7, 'sfsdfsdf', 'sdfsdfsfsgfd', 'fgdfhgsdf', 'ssfdhdfg', 'FDGDFGD', 0, 5);
+(1, 7, 'asdasdasd', 'asdasd', 'asdasd', 'asdasdsd', 'asdasdasd', 1, 5),
+(2, 7, 'asdasd', 'sadasd', 'dasdsd', 'dassdaasd', 'dxzsadaws', 3, 3),
+(3, 7, 'khgjh', 'gj', 'hg', 'jhgj', 'hgjhjhg', 1, 4),
+(4, 7, 'sdfdsfdsf', 'qsdfsdfsd', 'sdfsdfsd', 'sdfsdfsdf', 'dsfsdfsd', 4, 2),
+(5, 7, 'sfsdfsdf', 'sdfsdfsfsgfd', 'fgdfhgsdf', 'ssfdhdfg', 'FDGDFGD', 2, 5),
+(6, 8, 'asdasdsads', 'asdsadsadasd', 'sdfsdfsdfsdf', 'sdfsdsdgdfbvcb', 'cxbvncvnvn', 3, 3),
+(7, 8, 'asdasdas ddscxzvxcbv', 'bvcvcnvbcbvcb', ' sadas cxcvcxbvas', 'dgfsfdgdfgcxbcv', 'zzzxcxv dsgdfg', 3, 4),
+(8, 8, 'asda Sd sadfvdsv', 'SAdASd sadxzc', 'asdasgfsdv', 'dsfsdfsdf', 'asdasfsdvsdv', 1, 5),
+(9, 8, 'ASdsac', 'asdasc sad', 'asdascsa ', 'asd asczxcas', 'asdsacsa', 4, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `test_result`
+--
+
+CREATE TABLE `test_result` (
+  `result_id` smallint(6) NOT NULL,
+  `test_id` smallint(50) NOT NULL,
+  `attempted` tinyint(50) NOT NULL,
+  `not_attempted` tinyint(50) NOT NULL,
+  `right_answers` tinyint(50) NOT NULL,
+  `wrong_answers` tinyint(50) NOT NULL,
+  `marks_obtained` tinyint(100) NOT NULL,
+  `total_marks` tinyint(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -197,6 +234,12 @@ ALTER TABLE `student`
   ADD PRIMARY KEY (`stud_id`);
 
 --
+-- Indexes for table `test_attempted`
+--
+ALTER TABLE `test_attempted`
+  ADD PRIMARY KEY (`attempt_id`);
+
+--
 -- Indexes for table `test_bank`
 --
 ALTER TABLE `test_bank`
@@ -207,6 +250,12 @@ ALTER TABLE `test_bank`
 --
 ALTER TABLE `test_questions`
   ADD PRIMARY KEY (`question_id`);
+
+--
+-- Indexes for table `test_result`
+--
+ALTER TABLE `test_result`
+  ADD PRIMARY KEY (`result_id`);
 
 --
 -- Indexes for table `users`
@@ -223,36 +272,56 @@ ALTER TABLE `users`
 --
 ALTER TABLE `admin`
   MODIFY `admin_id` smallint(100) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `contact_us`
 --
 ALTER TABLE `contact_us`
   MODIFY `cid` smallint(6) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `staff`
 --
 ALTER TABLE `staff`
   MODIFY `staff_id` smallint(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
   MODIFY `stud_id` smallint(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `test_attempted`
+--
+ALTER TABLE `test_attempted`
+  MODIFY `attempt_id` smallint(6) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `test_bank`
 --
 ALTER TABLE `test_bank`
-  MODIFY `test_id` smallint(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `test_id` smallint(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
 -- AUTO_INCREMENT for table `test_questions`
 --
 ALTER TABLE `test_questions`
-  MODIFY `question_id` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `question_id` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `test_result`
+--
+ALTER TABLE `test_result`
+  MODIFY `result_id` smallint(6) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `user_id` smallint(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -61,7 +61,7 @@
                                                 </div>
                                                 <div class='col-md-4 offset-2'>
                                                     <label>Correct Option</label>
-                                                    <select class='form-control mb-2' name='correct_option[]'>
+                                                    <select class='custom-select mb-2' name='correct_option[]'>
                             							<option selected>Choose Option...</option>
                             							<option>Option 1</option>
                             							<option>Option 2</option>
@@ -78,7 +78,7 @@
                                 <br/>";
                         }
                     ?>
-                    <button class="btn btn-dark" type="button" data-toggle="modal" data-target="#sure">Submit</button>
+                    <button class="btn btn-dark offset-11" type="button" data-toggle="modal" data-target="#sure">Submit</button>
                 </form>
             </div>
         </div>

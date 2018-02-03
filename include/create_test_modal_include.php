@@ -41,9 +41,8 @@
                             <div class="col-md-4">
                                 <label style="display: block">Negative Marking</label>
                                 <label class="custom-control custom-checkbox">
-                                    <input id="neg-enable" type="checkbox" class="custom-control-input" name="negative_mark">
-                                    <span class="custom-control-indicator"></span>
-                                    <span class="custom-control-description">Enable Negative Marking</span>
+                                    <input id="customCheck1" type="checkbox" class="custom-control-input" name="negative_mark">
+                                    <label class="custom-control-label" for="customCheck1">Enable Negative Marking</label>
                                 </label>
                             </div>
                             <div class="col-md-4" id="neg-marking">
@@ -56,9 +55,8 @@
                             <div class="col-md-4">
                                 <label style="display: block">Test Time</label>
                                 <label class="custom-control custom-checkbox">
-                                    <input id="test-time-enable" type="checkbox" class="custom-control-input" name="test_time">
-                                    <span class="custom-control-indicator"></span>
-                                    <span class="custom-control-description">Enable Test Time</span>
+                                    <input id="customCheck2" type="checkbox" class="custom-control-input" name="test_time">
+                                    <label class="custom-control-label" for="customCheck2">Enable Test Time</label>
                                 </label>
                             </div>
                             <div class="col-md-4" id="test-time">
@@ -70,16 +68,14 @@
                         <div class="row">
                             <div class="col">
                                 <label style="display: block;">Test Visibility</label>
-                                <label class="custom-control custom-radio">
-                                    <input id="radioStacked1" name="radio-stacked" type="radio" class="custom-control-input" value="public" required>
-                                    <span class="custom-control-indicator"></span>
-                                    <span class="custom-control-description">Public</span>
-                                </label>
-                                <label class="custom-control custom-radio">
-                                    <input id="radioStacked2" name="radio-stacked" type="radio" class="custom-control-input" value="private" required>
-                                    <span class="custom-control-indicator"></span>
-                                    <span class="custom-control-description">Private</span>
-                                </label>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input id="customRadioInline1" name="customRadioInline1" type="radio" class="custom-control-input" value="public" required>
+                                    <label class="custom-control-label" for="customRadioInline1">Public</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input id="customRadioInline2" name="customRadioInline1" type="radio" class="custom-control-input" value="private" required>
+                                    <label class="custom-control-label" for="customRadioInline2">Private</label>
+                                </div>
                             </div>
                         </div>
                         <br>
