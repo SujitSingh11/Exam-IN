@@ -4,6 +4,7 @@
 	//  if ($_SESSION['logged_in'] == true) {
         # code...
     //  }
+	$_SESSION['stud_id'] = 1;
     $test_name = $_POST['test_name'];
     $test_id = $_POST['test_id'];
     $sql = "SELECT * FROM test_questions WHERE test_id = $test_id";

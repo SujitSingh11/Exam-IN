@@ -5,6 +5,7 @@
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $test_id = mysqli_real_escape_string($conn,$_POST['test_id']);
         $staff_id = mysqli_real_escape_string($conn,$_POST['staff_id']);
+        $stud_id = $_SESSION['stud_id'];
         $test_name = mysqli_real_escape_string($conn,$_POST['test_name']);
         $test_stream = mysqli_real_escape_string($conn,$_POST['test_stream']);
         $test_subject = mysqli_real_escape_string($conn,$_POST['test_subject']);
@@ -13,6 +14,16 @@
         $test_time = mysqli_real_escape_string($conn,$_POST['test_time']);
         $total_marks = mysqli_real_escape_string($conn,$_POST['total_marks']);
         $wrong = $right = $attempted = $marks_obtained = 0;
+        // SESSIONS
+        $_SESSION['test_id'] = $test_id;
+        $_SESSION['staff_id'] = $staff_id;
+        $_SESSION['test_name'] = $test_name;
+        $_SESSION['test_stream'] = $test_stream;
+        $_SESSION['test_subject'] = $test_subject;
+        $_SESSION['number_of_questions'] = $number_of_questions;
+        $_SESSION['neg_marks'] = $neg_marks;
+        $_SESSION['test_time'] = $test_time;
+        $_SESSION['total_marks'] = $total_marks;
 
         for ($i=0; $i < $number_of_questions; $i++)
         {
@@ -47,19 +58,23 @@
             }else {
                 if ($answer_code != 0) {
                     $wrong++;
+                    if ($neg_marks > 0) {
+                        $marks_obtained = $marks_obtained - $neg_marks;
+                    }
                 }
             }
         }
         $not_attempted = $number_of_questions - $attempted;
 
-        $sql_test_result = "INSERT INTO test_result (test_id, attempted, not_attempted, right_answers, wrong_answers, marks_obtained, total_marks)
-                            VALUES('$test_id','$attempted','$not_attempted','$right','$wrong','$marks_obtained','$total_marks')";
-        //$result_test_result = mysqli_query($conn,$sql_test_result);
+        $sql_test_result = "INSERT INTO test_result (stud_id, test_id, attempted, not_attempted, right_answers, wrong_answers, marks_obtained, total_marks)
+                            VALUES('$stud_id','$test_id','$attempted','$not_attempted','$right','$wrong','$marks_obtained','$total_marks')";
+        $result_test_result = mysqli_query($conn,$sql_test_result);
 
         $sql = "SELECT * FROM test_result WHERE test_id = $test_id";
-        //$result = mysqli_query($conn,$sql);
+        $result = mysqli_query($conn,$sql);
         $row = mysqli_fetch_assoc($result);
         $result_id = $row['result_id'];
+        $_SESSION['result_id'] = $result_id;
 
         for ($i=0; $i < $number_of_questions; $i++)
         {
@@ -82,7 +97,8 @@
             }
             $sql_test_attempted = "INSERT INTO test_attempted (result_id, question_id, answer)
                                     VALUES('$result_id','$question_id','$answer_code')";
-            //$result_test_attempted = mysqli_query($conn,$sql_test_attempted);
+            $result_test_attempted = mysqli_query($conn,$sql_test_attempted);
         }
+        header('location: test_result.php');
     }
 ?>

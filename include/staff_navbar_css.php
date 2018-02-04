@@ -164,7 +164,7 @@
         padding: 1em; } }
 
     #mainNav.fixed-top.navbar-dark .sidenav-toggler {
-    background-color: #212529; }
+    background-color: #848484; }
     #mainNav.fixed-top.navbar-dark .sidenav-toggler a i {
     color: #adb5bd; }
 
@@ -256,7 +256,7 @@
 
     @media (min-width: 992px) {
     #mainNav.navbar-dark .navbar-collapse .navbar-sidenav {
-    background: #343a40; }
+    background: #f9f8f8; }
     #mainNav.navbar-dark .navbar-collapse .navbar-sidenav li.active a {
       color: white !important;
       background-color: #495057; }
