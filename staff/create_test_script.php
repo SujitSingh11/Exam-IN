@@ -5,7 +5,7 @@
     //  if ($_SESSION['logged_in'] == true) {
         # code...
     //  }
-        $_SESSION['staff_id'] = 4;
+        $_SESSION['staff_id'] = 1;
     if ($_SERVER['REQUEST_METHOD'] == 'POST')  {
         // Escape all $_POST variables to protect against SQL injections
         $test_name = mysqli_real_escape_string($conn,$_POST['test_name']);
