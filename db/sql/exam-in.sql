@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 03, 2018 at 08:22 PM
+-- Generation Time: Feb 05, 2018 at 03:36 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -101,6 +101,17 @@ CREATE TABLE `test_attempted` (
   `answer` tinyint(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `test_attempted`
+--
+
+INSERT INTO `test_attempted` (`attempt_id`, `result_id`, `question_id`, `answer`) VALUES
+(1, 1, 1, 1),
+(2, 1, 2, 3),
+(3, 1, 3, 1),
+(4, 1, 4, 2),
+(5, 1, 5, 4);
+
 -- --------------------------------------------------------
 
 --
@@ -124,8 +135,8 @@ CREATE TABLE `test_bank` (
 --
 
 INSERT INTO `test_bank` (`test_id`, `staff_id`, `test_name`, `test_stream`, `test_subject`, `number_of_questions`, `neg_marks`, `test_time`, `test_visibility`) VALUES
-(7, 4, 'Class-Test 4', 'MCA-CET', 'Computer Awareness', 5, 1, 60, 0),
-(8, 4, 'Tutorial Test 1', 'MBA-CET', 'Computer Awareness', 4, 2, 40, 0);
+(7, 1, 'Class-Test 4', 'MCA-CET', 'Computer Awareness', 5, 1, 60, 0),
+(8, 1, 'Tutorial Test 1', 'MBA-CET', 'Computer Awareness', 4, 2, 40, 0);
 
 -- --------------------------------------------------------
 
@@ -168,6 +179,7 @@ INSERT INTO `test_questions` (`question_id`, `test_id`, `question`, `option_1`, 
 
 CREATE TABLE `test_result` (
   `result_id` smallint(6) NOT NULL,
+  `stud_id` smallint(50) NOT NULL,
   `test_id` smallint(50) NOT NULL,
   `attempted` tinyint(50) NOT NULL,
   `not_attempted` tinyint(50) NOT NULL,
@@ -176,6 +188,13 @@ CREATE TABLE `test_result` (
   `marks_obtained` tinyint(100) NOT NULL,
   `total_marks` tinyint(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `test_result`
+--
+
+INSERT INTO `test_result` (`result_id`, `stud_id`, `test_id`, `attempted`, `not_attempted`, `right_answers`, `wrong_answers`, `marks_obtained`, `total_marks`) VALUES
+(1, 1, 7, 5, 0, 3, 2, 12, 19);
 
 -- --------------------------------------------------------
 
@@ -295,7 +314,7 @@ ALTER TABLE `student`
 -- AUTO_INCREMENT for table `test_attempted`
 --
 ALTER TABLE `test_attempted`
-  MODIFY `attempt_id` smallint(6) NOT NULL AUTO_INCREMENT;
+  MODIFY `attempt_id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `test_bank`
@@ -313,7 +332,7 @@ ALTER TABLE `test_questions`
 -- AUTO_INCREMENT for table `test_result`
 --
 ALTER TABLE `test_result`
-  MODIFY `result_id` smallint(6) NOT NULL AUTO_INCREMENT;
+  MODIFY `result_id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
