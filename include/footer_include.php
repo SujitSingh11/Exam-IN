@@ -4,7 +4,7 @@
               <div class="col-sm-3">
                   <img src="Logo.svg" width="250" height="100" alt="">
               </div>
-              <div class="col-sm-2">
+              <div class="col-sm-2  wow animated fadeInRight" style="animation-delay: 1s;">
                   <h5>Get started</h5>
                   <ul>
                       <li><a href="#">Home</a></li>
@@ -12,7 +12,7 @@
                       <li><a href="#">Downloads</a></li>
                   </ul>
               </div>
-              <div class="col-sm-2">
+              <div class="col-sm-2  wow animated fadeInRight" style="animation-delay: 1.5s;">
                   <h5>About us</h5>
                   <ul>
                       <li><a href="#">Company Information</a></li>
@@ -20,7 +20,7 @@
                       <li><a href="#">Reviews</a></li>
                   </ul>
               </div>
-              <div class="col-sm-2">
+              <div class="col-sm-2  wow animated fadeInRight" style="animation-delay: 2s;">
                   <h5>Support</h5>
                   <ul>
                       <li><a href="#">FAQ</a></li>
@@ -30,9 +30,9 @@
               </div>
               <div class="col-sm-3">
                   <div class="social-networks">
-                      <a href="#" class="twitter"><i class="fab fa-twitter"></i></i></a>
-                      <a href="#" class="facebook"><i class="fab fa-facebook-square"></i></a>
-                      <a href="#" class="google"><i class="fab fa-google-plus-g"></i></a>
+                      <a href="#" class="twitter wow animated fadeIn" style="animation-delay: 2.5s;"><i class="fab fa-twitter"></i></i></a>
+                      <a href="#" class="facebook wow animated fadeIn" style="animation-delay: 3s;"><i class="fab fa-facebook-square"></i></a>
+                      <a href="#" class="google wow animated fadeIn" style="animation-delay: 3.5s;"><i class="fab fa-google-plus-g"></i></a>
                   </div>
                   <button type="button" class="btn btn-default" data-toggle="modal" data-target="#contactus">Contact us</button>
               </div>

@@ -32,10 +32,10 @@
 	<header class="masthead">
       <div class="header-content">
         <div class="header-content-inner">
-          <h1 id="homeHeading">An Online Solution For Examination</h1>
-          <hr>
-          <p>Join our community to enjoy the full features of Exam-In!</p>
-          <a class="btn btn-outline-light btn-xl js-scroll-trigger" href="#about">Find Out More</a>
+          <h1 id="homeHeading" class="animated bounceInLeft" style="animation-delay: 1s;">An Online Solution For Examination</h1>
+          <hr class="animated fadeIn">
+          <p class="animated bounceInRight" style="animation-delay: 1.5s;">Join our community to enjoy the full features of Exam-In!</p>
+          <a class="btn btn-outline-light btn-xl js-scroll-trigger animated bounceInUp " style="animation-delay: 2.5s;" href="#about">Find Out More</a>
         </div>
       </div>
     </header>
@@ -45,11 +45,140 @@
 	<?php include 'include/contact_us_modal_include.php' ?>
 
 	<!--Services-->
+	<section id="services">
+	  <div class="container">
+		<div class="row">
+		  <div class="col-lg-12 text-center">
+			<h2 class="section-heading text-uppercase">Services</h2>
+			<h3 class="section-subheading text-muted mb-5 wow animated fadeInUp" style="font-size:0.3 em;">Services we provide</h3>
+		  </div>
+		</div>
+		<div class="row text-center">
+		  <div class="col-md-4">
+			<span class="fa-stack fa-4x">
+			  <i class="fa fa-circle fa-stack-2x text-primary"></i>
+			  <i class="fa fa-copy fa-stack-1x fa-inverse wow animated fadeInUp"></i>
+			</span>
+			<h4 class="service-heading">Create Test</h4>
+			<p class="text-muted">Staff Users are able to create test for Student Users.</p>
+		  </div>
+		  <div class="col-md-4">
+			<span class="fa-stack fa-4x">
+			  <i class="fa fa-circle fa-stack-2x text-primary"></i>
+			  <i class="fa fa-laptop fa-stack-1x fa-inverse wow animated fadeInUp"></i>
+			</span>
+			<h4 class="service-heading">Attempt Test</h4>
+			<p class="text-muted">Student Users able to Attempt test created by Staff Users.</p>
+		  </div>
+		  <div class="col-md-4">
+			<span class="fa-stack fa-4x">
+			  <i class="fa fa-circle fa-stack-2x text-primary"></i>
+			  <i class="fa fa-lock fa-stack-1x fa-inverse wow animated fadeInUp"></i>
+			</span>
+			<h4 class="service-heading">Web Security</h4>
+			<p class="text-muted">Site is secured by advance encryption methods and user data is kept secured.</p>
+		  </div>
+		</div>
+	  </div>
+	</section>
+	<!--SHOWCASE -->
+	<div class="section text-parallax parallax-image1" id="services">
+		<div class="container">
+			<div class="row showcase">
+				<div class="col-md-3 col-sm-6 wow animated fadeInUp">
+					<div class="item">
+						<div class="icon"><i class="fa fa-copy"></i>
+						</div>
+						<h4><span class="counter">1200</span><br>Tests</h4>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 wow animated fadeInUp">
+					<div class="item">
+						<div class="icon"><i class="fas fa-users"></i>
+						</div>
+						<h4><span class="counter">500</span><br>Users</h4>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 wow animated fadeInUp">
+					<div class="item">
+						<div class="icon"><i class="fas fa-th"></i>
+						</div>
+						<h4><span class="counter">3200</span><br>Test Attempted</h4>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 wow animated fadeInUp">
+					<div class="item">
+						<div class="icon"><i class="fa fa-font"></i>
+						</div>
+						<h4><span class="counter">150</span><br />Staff</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="dark-mask"></div>
+	</div>
 
+	<section class="section contact" id="contact">
+		<div class="container">
+			<div class="col-md-12">
+				<h2 class="title text-white wow animated slideInLeft">Contact Us</h2>
+				<div class="row">
+					<div class="col-md-8 offset-2">
+						<form method="post" action="contact.php">
+							<div class="controls wow animated slideInRight">
+								<div class="row">
+									<div class="col-md-6">
+										<input type="text" name="name" class="form-control" placeholder="Your firstname *" required="required">
+									</div>
+									<div class="col-md-6">
+										<input type="text" name="surname" class="form-control" placeholder="Your lastname *" required="required">
+									</div>
+									<div class="col-md-6">
+										<input type="text" name="email" class="form-control" placeholder="Your email *" required="required">
+									</div>
+									<div class="col-md-6">
+										<input type="text" name="phone" class="form-control" placeholder="Your phone">
+									</div>
+									<div class="col-md-12">
+										<textarea name="message" class="form-control" placeholder="Message for Us *" rows="4" required="required"></textarea>
+									</div>
+									<div class="col-md-12 text-center wow animated bounce" style="animation-delay: 0.5s;">
+										<input type="submit" class="btn btn-primary btn-lg" value="Send message">
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 	<!--Testimonial-->
 
-	<!--Something-->
-
+	<!--Contact-->
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 mx-auto text-center">
+					<h2 class="section-heading wow animated slideInLeft">Let's Get In Touch!</h2>
+					<hr class="primary wow animated slideInRight">
+					<p>Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-4 ml-auto text-center">
+					<i class="fas fa-phone fa-2x sr-contact my-3 wow animated fadeInUp" style="animation-delay: 0.5s;"></i>
+					<p>123-456-6789</p>
+				</div>
+				<div class="col-lg-4 mr-auto text-center">
+					<i class="fas fa-envelope fa-2x sr-contact my-3 wow animated fadeInUp" style="animation-delay: 0.5s;"></i>
+					<p>
+					  <a href="mailto:=examin.assist@yahoo.com">examin.assist@yahoo.com</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
 	<!--Footer-->
 	<?php include 'include/footer_include.php' ?>
 

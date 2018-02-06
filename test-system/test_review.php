@@ -26,7 +26,7 @@
     <!--Test Review-->
     <div class="content-wrapper my-5">
         <div class="container my-3">
-            <div class="card mb-5">
+            <div class="card mb-5 mx-5">
                 <h5 class="card-header">Test Review</h5>
                 <div class="card-body">
                     <h5 class="card-title"><?php echo $test_name; ?></h5>
@@ -50,7 +50,7 @@
                             elseif ($row['correct_option'] == 4) {
                                 $correct_option = "D";
                             }
-                            echo "<div class='card my-3'>
+                            echo "<div class='card my-3 mx-4'>
                                     <h5 class='card-header'>".($i+1).". ".$row['question']."</h5>
                                     <div class='card-body'>
                                         <div class='row'>

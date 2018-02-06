@@ -6,7 +6,7 @@
     # }
     $sql = "SELECT * FROM test_bank";
     $result = mysqli_query($conn,$sql);
-    $_SESSION['user_type']= 2;
+    $_SESSION['user_type']= 1;
 ?>
 <!DOCTYPE html>
 <html>

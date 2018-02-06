@@ -19,7 +19,7 @@
           <textarea class="form-control" type="text" name="feedback" placeholder="Write your thoughts to us..." rows="10"></textarea>
           <br>
           <button class="btn btn-dark" type="submit">Submit</button>
-        </div>    
+        </div>
       </form>
     </div>
     <?php include '../include/js_include.php' ?>
