@@ -9,8 +9,8 @@
 			<div class="navbar-nav mr-auto mt-2 mt-lg-0 animated slideInLeft">
 				<a class="nav-item nav-link" href="index.php">Home</a>
 		      	<a class="nav-item nav-link" href="#">Services</a>
-		      	<a class="nav-item nav-link" href="public/about_us.php">About Us</a>
-		      	<a class="nav-item nav-link" href="public/feedback.php">Testimonials</a>
+		      	<a class="nav-item nav-link" href="about_us.php">About Us</a>
+		      	<a class="nav-item nav-link" href="feedback.php">Testimonials</a>
 			</div>
 			<div class="form-inline my-2 my-lg-0 animated bounceInRight" style="animation-delay: 0.5s;">
 				<button type="button" class="btn btn-outline-dark m-2" data-toggle="modal" data-target="#signupmodal">Sign-up</button>

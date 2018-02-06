@@ -73,6 +73,7 @@
         $sql = "SELECT * FROM test_result WHERE test_id = $test_id";
         $result = mysqli_query($conn,$sql);
         $row = mysqli_fetch_assoc($result);
+        //Error
         $result_id = $row['result_id'];
         $_SESSION['result_id'] = $result_id;
 

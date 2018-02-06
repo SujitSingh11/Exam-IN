@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>Contact Us</title>
     <?php include 'include/css_include.php' ?>
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
   <body>
     <?php include 'include/navbar_include.php' ?>
@@ -21,7 +21,9 @@
                     <label>Feedback</label>
                     <textarea class="form-control" type="text" name="feedback" placeholder="Write your thoughts to us..." rows="10"></textarea>
                     <br>
-                    <button class="btn btn-dark" type="submit">Submit</button>
+                    <div class="offset-11">
+                        <button class="btn btn-dark" type="submit">Submit</button>
+                    </div>
                 </div>
             </form>
         </div>
