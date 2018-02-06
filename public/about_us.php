@@ -21,14 +21,14 @@
                           <h1>About Us</h1>
                       </header>
                       <div class="intro-content">
-                          <div class="profile"><img src="../img/profile1.svg" alt="profile1"></div>
+                          <div class="profile"><img src="../img/profile1.jpg" alt="profile1"></div>
                           <h1><span>Sujit Singh</span><span>Web Developer</span></h1>
                       </div>
                       <div class="overlay"></div>
                   </div>
                   <div class="side side-right">
                       <div class="intro-content">
-                          <div class="profile"><img src="../img/profile2.svg" alt="profile2"></div>
+                          <div class="profile"><img src="../img/profile2.jpg" alt="profile2"></div>
                           <h1><span>Shubham Shripurkar</span><span>Web Designer</span></h1>
                       </div>
                       <div class="overlay"></div>
