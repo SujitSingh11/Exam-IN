@@ -15,9 +15,9 @@
 
 	if (mysqli_query($conn,$sql)) {
 		$_SESSION['message'] = 'Your Query has been submited.! <br> You will hear from us soon.';
-        header("location: ../success.php");
+        header("location: success.php");
 	}else{
 		$_SESSION['message'] = 'Your Query has been submited.! <br> You will hear from us soon.';
-        header("location: ../error.php");
+        header("location: error.php");
 	}
 ?>
