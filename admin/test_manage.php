@@ -49,8 +49,8 @@
                         </thead>
                         <tbody>
                             <?php
+							$i = 0;
                             while ($row = mysqli_fetch_assoc($result)) {
-                                $i = 0;
                                 if ($row['neg_marks'] > 0) {
                                     $neg_marks = "Yes";
                                 }
@@ -77,6 +77,7 @@
                                     <td><button class='btn btn-outline-danger' name='submitTest' type='submit'><i class='far fa-trash-alt'></i></button></td>
                                 </form>
                                 </tr>";
+								$i++;
                             }
                             ?>
                         </tbody>

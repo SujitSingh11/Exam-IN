@@ -86,6 +86,7 @@
 													<td><button class='btn btn-outline-danger' name='submitStud' type='submit'><i class='far fa-trash-alt'></i></button></td>
 												</form>
 											</tr>";
+											$i++;
 									}
 									?>
 								</tbody>
@@ -135,6 +136,7 @@
 														<td><button class='btn btn-outline-danger' name='submitStaff' type='submit'><i class='far fa-trash-alt'></i></button></td>
 													</form>
 												</tr>";
+												$i++;
 										}
 									?>
 								</tbody>

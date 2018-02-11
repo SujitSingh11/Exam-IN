@@ -325,6 +325,15 @@
     .card-register {
     max-width: 40rem; }
 
+    #profile img{
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    #profile{
+        text-align: center;
+    }
+
     footer.sticky-footer {
     position: absolute;
     right: 0;

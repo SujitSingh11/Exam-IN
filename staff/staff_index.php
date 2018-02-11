@@ -5,6 +5,7 @@
         $_SESSION['message'] = "You are not Signed In.! <br> Please Sign in.";
         die(header('Location: ../error.php'));
     }
+	
 ?>
 <!DOCTYPE html>
 <html>

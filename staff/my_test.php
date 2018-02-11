@@ -38,18 +38,28 @@
                         }else {
                             $neg_marks = 'NO';
                         }
+                        if ($row['test_time'] > 0) {
+                            $test_time = 'YES';
+                        }else {
+                            $test_time = 'NO';
+                        }
                         echo"<div class='col-md-4 my-4'>
                                 <div class='card' style='width: 18rem;'>";
-                                echo"   <form class='card-body' action='../test-system/test_review.php' method='POST'>
-                                            <h5 class='card-title'>".$row['test_name']."</h5>
-                                            <h6 class='card-subtitle mb-1 text-muted'>".$row['test_stream']."</h6>
-                                            <h7 class='card-subtitle mb-3 text-muted'>".$row['test_subject']."</h7>
-                                            <p class='card-text'>Number of questions: ".$row['number_of_questions']."</p>
-                                            <p class='card-text'>Negative Marks: ".$neg_marks."</p>
-                                            <p class='card-text'>Wrong Option: ".$row['neg_marks']."</p>
-                                            <p class='card-text'>Test Time: ".$row['test_time']."</p>
-                                            <input type='hidden' name='test_id' value='".$row['test_id']."'>
-                                            <input type='hidden' name='test_name' value='".$row['test_name']."'>
+                                echo"   <form class='card-body' action='test_review.php' method='POST'>
+                                            <h5 class='card-title'><i>".$row['test_name']."</i></h5>
+                                            <h6 class='card-subtitle mb-1 text-muted'><i>".$row['test_stream']."</i></h6>
+                                            <h7 class='card-subtitle mb-3 text-muted'><i>".$row['test_subject']."</i></h7>
+                                            <p class='card-text'>Number of questions: <i>".$row['number_of_questions']."</i></p>
+                                            <p class='card-text'>Negative Marks: <i>".$neg_marks."</i></p>";
+                                            if ($row['neg_marks'] > 0) {
+                                                echo "<p class='card-text'>Wrong Option: <i>-".$row['neg_marks']."</i></p>";
+                                            }
+                                echo"       <p class='card-text'>Test Time: <i>".$test_time."</i></p>";
+                                            if ($row['test_time'] > 0) {
+                                                echo "<p class='card-text'>Test Time: <i>".$row['test_time']."</i></p>";
+                                            }
+                                echo"       <input type='hidden' name='test_id' value='<i>".$row['test_id']."</i>'>
+                                            <input type='hidden' name='test_name' value='<i>".$row['test_name']."</i>'>
                                             <button type='submit' class='btn btn-outline-warning'>Review</button>
                                             <button type='submit' class='btn btn-outline-info' formaction='edit_my_test.php'>Edit</button>
                                         </form>
