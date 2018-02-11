@@ -1,9 +1,10 @@
 <?php
     include_once '../db/database.php';
     session_start();
-    //  if ($_SESSION['logged_in'] == true) {
-        # code...
-    //  }
+    if ($_SESSION['logged_in'] == false) {
+        $_SESSION['message'] = "You are not Signed In.! <br> Please Sign in.";
+        die(header('Location: ../error.php'));
+    }
     $test_id = $_SESSION['test_id'];
     $result_id = $_SESSION['result_id'];
     $test_name = $_SESSION['test_name'];

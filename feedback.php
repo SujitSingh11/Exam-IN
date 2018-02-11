@@ -3,7 +3,7 @@
   <head>
     <?php include 'include/meta_include.php' ?>
     <meta charset="utf-8">
-    <title>Contact Us</title>
+    <title>Feedback</title>
     <?php include 'include/css_include.php' ?>
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
@@ -12,7 +12,7 @@
     <div class="container m-5">
         <div class="card mx-5" style="margin-top: 17vh;">
             <h2 class="card-header">Feedback</h2>
-            <form class="card-body" action="" method="">
+            <form class="card-body" action="feedback_form.php" method="POST">
                 <div class="form-group">
                     <label>Name</label>
                     <input class="form-control" type="text" name="name" placeholder="name"/>

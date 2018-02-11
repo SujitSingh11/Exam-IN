@@ -1,9 +1,10 @@
 <?php
     include_once '../db/database.php';
     session_start();
-    //  if ($_SESSION['logged_in'] == true) {
-        # code...
-    //  }
+    if ($_SESSION['logged_in'] == false) {
+        $_SESSION['message'] = "You are not Signed In.! <br> Please Sign in.";
+        die(header('Location: ../error.php'));
+    }
     $staff_id = $_SESSION['staff_id'];
     $sql_staff_info = "SELECT users.user_id AS user_id, staff.staff_id AS staff_id, users.first_name AS first_name, users.last_name AS last_name, users.username AS staff_username
                 FROM Users

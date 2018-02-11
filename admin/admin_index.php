@@ -2,6 +2,11 @@
 	include '../db/database.php';
 	session_start();
 
+	if ($_SESSION['logged_in'] == false) {
+        $_SESSION['message'] = "You are not Signed In.! <br> Please Sign in.";
+        die(header('Location: ../error.php'));
+    }
+
 	$sql_stud = "SELECT users.user_id AS user_id, student.stud_id AS stud_id, users.first_name AS first_name, users.last_name AS last_name, users.username AS username, users.email AS email, users.active AS active
             FROM Users
             INNER JOIN student ON student.user_id = users.user_id";

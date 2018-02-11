@@ -2,10 +2,11 @@
     // Get Test Information From Test form
     require '../db/database.php';
     session_start();
-    //  if ($_SESSION['logged_in'] == true) {
-        # code...
-    //  }
-        $_SESSION['staff_id'] = 1;
+    if ($_SESSION['logged_in'] == false) {
+        $_SESSION['message'] = "You are not Signed In.! <br> Please Sign in.";
+        die(header('Location: ../error.php'));
+    }
+
     if ($_SERVER['REQUEST_METHOD'] == 'POST')  {
         // Escape all $_POST variables to protect against SQL injections
         $test_name = mysqli_real_escape_string($conn,$_POST['test_name']);

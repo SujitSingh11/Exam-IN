@@ -20,20 +20,24 @@ session_start();
                                 echo $_SESSION['message'];
                                 unset($_SESSION['message']);
                             else:
-                                //header( "location: index.php" );
+                                header( "location: index.php" );
                             endif;
                         ?>
     				</div>
                     <div class="card-footer">
                         <div class="offset-10">
-                            <button id="HomeButton" type="button" class="btn btn-warning">Cancel</button>
+                            <button id="HomeButton" type="button" class="btn btn-info">Home</button>
                         </div>
                     </div>
                 </div>
 			</div>
 		</div>
 	</div>
-
+    <script>
+        document.getElementById("HomeButton").onclick = function () {
+            location.href = "index.php";
+        };
+    </script>
     <?php include 'include/js_include.php' ?>
 </body>
 </html>

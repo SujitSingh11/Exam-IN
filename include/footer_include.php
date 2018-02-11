@@ -1,7 +1,7 @@
 <footer>
       <div class="container">
           <div class="row">
-              <div class="col-sm-3">
+              <div class="col-md-3">
                   <img src="Logo.svg" width="250" height="100" alt="">
               </div>
               <div class="col-sm-2  wow animated fadeInRight" style="animation-delay: 1s;">
@@ -34,7 +34,7 @@
                       <a href="#" class="facebook wow animated fadeIn" style="animation-delay: 3s;"><i class="fab fa-facebook-square"></i></a>
                       <a href="#" class="google wow animated fadeIn" style="animation-delay: 3.5s;"><i class="fab fa-google-plus-g"></i></a>
                   </div>
-                  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#contactus">Contact us</button>
+                  <button type="button" class="btn btn-default" data-target="#contactus">Contact us</button>
               </div>
           </div>
       </div>

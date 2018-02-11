@@ -1,12 +1,14 @@
 <?php
     include_once '../db/database.php';
     session_start();
-    #  if ($_SESSION['logged_in'] == true) {
-        # code...
-    # }
+
+    if ($_SESSION['logged_in'] == false) {
+        $_SESSION['message'] = "You are not Signed In.! <br> Please Sign in.";
+        die(header('Location: ../error.php'));
+    }
     $sql = "SELECT * FROM test_bank";
     $result = mysqli_query($conn,$sql);
-    $_SESSION['user_type']= 2;
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -50,8 +52,7 @@
                                     elseif ($_SESSION['user_type']==2) {
                                         echo "<form class='card-body' action='../student/test_attempt.php' method='POST'>";
                                     }
-                                echo"   <form class='card-body' action='test_review.php' method='POST'>
-                                        <h5 class='card-title'>".$row['test_name']."</h5>
+                                echo"   <h5 class='card-title'>".$row['test_name']."</h5>
                                         <h6 class='card-subtitle mb-1 text-muted'>".$row['test_stream']."</h6>
                                         <h7 class='card-subtitle mb-3 text-muted'>".$row['test_subject']."</h7>
                                         <p class='card-text'>Number of questions: ".$row['number_of_questions']."</p>

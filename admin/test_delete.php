@@ -2,6 +2,10 @@
 include '../db/database.php';
 session_start();
 
+if ($_SESSION['logged_in'] == false) {
+    $_SESSION['message'] = "You are not Signed In.! <br> Please Sign in.";
+    die(header('Location: ../error.php'));
+}
 if (isset($_POST['submitTest'])) {
     $test_id = $_POST['test_id'];
     $sql_test = "DELETE FROM test_bank WHERE test_id='$test_id'";

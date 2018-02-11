@@ -42,8 +42,6 @@
 
 	<!--Modals-->
 	<?php include 'include/login_modal_include.php' ?>
-	<?php include 'include/contact_us_modal_include.php' ?>
-
 	<!--Services-->
 	<section id="services">
 	  <div class="container">
@@ -81,6 +79,7 @@
 		</div>
 	  </div>
 	</section>
+
 	<!--SHOWCASE -->
 	<div class="section text-parallax parallax-image1" id="services">
 		<div class="container">
@@ -124,25 +123,25 @@
 				<h2 class="title text-white wow animated slideInLeft">Contact Us</h2>
 				<div class="row">
 					<div class="col-md-8 offset-2">
-						<form method="post" action="contact.php">
+						<form method="post" action="contact_us_form.php">
 							<div class="controls wow animated slideInRight">
 								<div class="row">
 									<div class="col-md-6">
-										<input type="text" name="name" class="form-control" placeholder="Your firstname *" required="required">
+										<input type="text" name="fname" class="form-control" placeholder="Your firstname *" required="required">
 									</div>
 									<div class="col-md-6">
-										<input type="text" name="surname" class="form-control" placeholder="Your lastname *" required="required">
+										<input type="text" name="lname" class="form-control" placeholder="Your lastname *" required="required">
 									</div>
 									<div class="col-md-6">
-										<input type="text" name="email" class="form-control" placeholder="Your email *" required="required">
+										<input type="email" name="cemail" class="form-control" placeholder="Your email *" required="required">
 									</div>
 									<div class="col-md-6">
-										<input type="text" name="phone" class="form-control" placeholder="Your phone">
+										<input type="number" name="phone" class="form-control" placeholder="Your phone">
 									</div>
 									<div class="col-md-12">
 										<textarea name="message" class="form-control" placeholder="Message for Us *" rows="4" required="required"></textarea>
 									</div>
-									<div class="col-md-12 text-center wow animated bounce" style="animation-delay: 0.5s;">
+									<div class="col-md-12 text-center wow animated fadeInUp" style="animation-delay: 0.5s;">
 										<input type="submit" class="btn btn-primary btn-lg" value="Send message">
 									</div>
 								</div>

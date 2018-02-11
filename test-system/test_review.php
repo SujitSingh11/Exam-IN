@@ -1,9 +1,11 @@
 <?php
     include_once '../db/database.php';
     session_start();
-    //  if ($_SESSION['logged_in'] == true) {
-        # code...
-    //  }
+    
+    if ($_SESSION['logged_in'] == false) {
+        $_SESSION['message'] = "You are not Signed In.! <br> Please Sign in.";
+        die(header('Location: ../error.php'));
+    }
     $test_name = $_POST['test_name'];
     $test_id = $_POST['test_id'];
     $sql = "SELECT * FROM test_questions WHERE test_id = $test_id";

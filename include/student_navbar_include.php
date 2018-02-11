@@ -8,25 +8,31 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="<?php echo $_SESSION['first_name'].' '.$_SESSION['last_name']; ?>">
+                <div class="container ml-5 my-4">
+                    <img class="mb-2" src="../img/profile1.svg" width="60%" >
+                    <h6 class="text-muted"><?php echo $_SESSION['first_name'].' '.$_SESSION['last_name']; ?></h6>
+                </div>
+            </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
                 <a class="nav-link" href="../student/student_index.php">
                     <i class="fas fa-th mr-1"></i>
                     <span class="nav-link-text">Dashboard</span>
                 </a>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="My Profile">
                 <a class="nav-link" href="#">
                     <i class="fas fa-user mr-1"></i>
                     <span class="nav-link-text">My Profile</span>
                 </a>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="My Tests">
                 <a class="nav-link" href="#">
                     <i class="fas fa-file-alt mr-1"></i>
                     <span class="nav-link-text">My Tests</span>
                 </a>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Test Bank">
                 <a class="nav-link" href="../test-system/test_bank.php">
                     <i class="fas fa-folder mr-1"></i>
                     <span class="nav-link-text">Test Bank</span>

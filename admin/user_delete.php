@@ -1,7 +1,11 @@
 <?php
     include '../db/database.php';
     session_start();
-
+    
+    if ($_SESSION['logged_in'] == false) {
+        $_SESSION['message'] = "You are not Signed In.! <br> Please Sign in.";
+        die(header('Location: ../error.php'));
+    }
     if (isset($_POST['submitStud']) OR isset($_POST['submitStaff'])) {
         $user_id = $_POST['user_id'];
         $sql_users = "DELETE FROM users WHERE user_id='$user_id'";

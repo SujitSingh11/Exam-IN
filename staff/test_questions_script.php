@@ -1,7 +1,10 @@
 <?php
     include '../db/database.php';
     session_start();
-
+    if ($_SESSION['logged_in'] == false) {
+        $_SESSION['message'] = "You are not Signed In.! <br> Please Sign in.";
+        die(header('Location: ../error.php'));
+    }
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $number_of_questions = $_SESSION['number_of_questions'];
         $test_id = mysqli_real_escape_string($conn,$_SESSION['test_id']);

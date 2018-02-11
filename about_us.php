@@ -18,7 +18,7 @@
               <div class="intro">
                   <div class="side side-left">
                       <header class="codropsheader clearfix">
-                          <span><a href="../index.php">Exam-in</a></span>
+                          <span><a href="index.php">Exam-in</a></span>
                           <h1>About Us</h1>
                       </header>
                       <div class="intro-content">
@@ -71,7 +71,7 @@
                       <section>
                           <h2>Portfolio</h2>
                           <p>SocoClub</p>
-                          <p>VegiShop.</p>
+                          <p>VegiShop</p>
                           <p>Exam-in</p>
                       </section>
                   </div><!-- /page-inner -->

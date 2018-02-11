@@ -8,6 +8,12 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="<?php echo $_SESSION['first_name'].' '.$_SESSION['last_name']; ?>">
+                <div class="container ml-5 my-4">
+                    <img class="mb-2" src="../img/profile1.svg" width="60%" >
+                    <h6 class="text-muted"><?php echo $_SESSION['first_name'].' '.$_SESSION['last_name']; ?></h6>
+                </div>
+            </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
                 <a class="nav-link" href="../staff/staff_index.php">
                     <i class="fas fa-th mr-1"></i>
@@ -21,7 +27,7 @@
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="../staff/my_test.php">
                     <i class="fas fa-file-alt mr-1"></i>
                     <span class="nav-link-text">My Tests</span>
                 </a>

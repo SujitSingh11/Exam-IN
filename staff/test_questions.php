@@ -1,9 +1,10 @@
 <?php
     include_once '../db/database.php';
     session_start();
-    //  if ($_SESSION['logged_in'] == true) {
-        # code...
-    //  }
+    if ($_SESSION['logged_in'] == false) {
+        $_SESSION['message'] = "You are not Signed In.! <br> Please Sign in.";
+        die(header('Location: ../error.php'));
+    }
     $test_name = $_SESSION['test_name'];
     $sql = "SELECT * FROM test_bank WHERE test_name='$test_name'";
     $result = mysqli_query($conn,$sql);
