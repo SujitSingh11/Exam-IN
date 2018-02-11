@@ -67,6 +67,8 @@
                             </div>";
                     }
                     echo "</div>";
+                }else {
+                    echo "<div class='alert alert-info alert-dismissible fade show' role='alert'>You haven't created any test yet, click on Create Test.</div><br>";
                 }
             ?>
         </div>

@@ -9,8 +9,10 @@
   </head>
   <body>
     <?php include 'include/navbar_include.php' ?>
-    <div class="container m-5">
-        <div class="card mx-5" style="margin-top: 17vh;">
+    <!--Modals-->
+	<?php include 'include/login_modal_include.php' ?>
+    <div class="container">
+        <div class="card mx-5 mb-4" style="margin-top: 17vh;">
             <h2 class="card-header">Feedback</h2>
             <form class="card-body" action="feedback_form.php" method="POST">
                 <div class="form-group">

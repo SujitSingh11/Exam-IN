@@ -8,11 +8,11 @@
     }
 
 	$sql_stud = "SELECT users.user_id AS user_id, student.stud_id AS stud_id, users.first_name AS first_name, users.last_name AS last_name, users.username AS username, users.email AS email, users.active AS active
-            FROM Users
+            FROM users
             INNER JOIN student ON student.user_id = users.user_id";
 
     $sql_staff = "SELECT users.user_id AS user_id, staff.staff_id AS staff_id, users.first_name AS first_name, users.last_name AS last_name, users.username AS username, users.email AS email, users.active AS active
-                FROM Users
+                FROM users
                 INNER JOIN staff ON staff.user_id = users.user_id";
 
     $result_stud = mysqli_query($conn,$sql_stud);
@@ -157,11 +157,6 @@
         </div>
     </footer>
     <?php  include '../include/create_test_modal_include.php' ?>
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fa fa-angle-up"></i>
-    </a>
-
 	<?php include '../include/js_include.php' ?>
 	<?php include '../include/staff_master_js_include.php' ?>
 </body>

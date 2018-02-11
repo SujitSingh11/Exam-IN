@@ -10,7 +10,7 @@
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="<?php echo $_SESSION['first_name'].' '.$_SESSION['last_name']; ?>">
                 <div id="profile" class="container my-4">
-                    <img class="mb-2 rounded-circle" src="../img/profile4.png" width="60%" >
+                    <img id="img" class="mb-2 rounded-circle" src="../img/profile4.png" width="60%" >
                     <h6 class="nav-link-text text-muted"><?php echo $_SESSION['first_name'].' '.$_SESSION['last_name']; ?></h6>
                 </div>
             </li>
@@ -55,7 +55,7 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item mr-3">
                 <a class="nav-link" id="logout">
-                <i class="fas fa-sign-out-alt mr-1"></i>Logout</a>
+                <i id="ico" class="fas fa-sign-out-alt mr-1"></i>Logout</a>
             </li>
         </ul>
     </div>

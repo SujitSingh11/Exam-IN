@@ -6,6 +6,7 @@
         document.getElementById('neg-marking').style.display = 'none';
         document.getElementById('test-time').style.display = 'none';
     };
+
     $('#customCheck1').click(function() {
         $('#neg-marking')[this.checked ? "show" : "hide"]();
     });

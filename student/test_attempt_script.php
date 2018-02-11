@@ -18,6 +18,7 @@
         $test_time = mysqli_real_escape_string($conn,$_POST['test_time']);
         $total_marks = mysqli_real_escape_string($conn,$_POST['total_marks']);
         $wrong = $right = $attempted = $marks_obtained = 0;
+
         // SESSIONS
         $_SESSION['test_id'] = $test_id;
         $_SESSION['staff_id'] = $staff_id;
@@ -73,13 +74,8 @@
         $sql_test_result = "INSERT INTO test_result (stud_id, test_id, attempted, not_attempted, right_answers, wrong_answers, marks_obtained, total_marks)
                             VALUES('$stud_id','$test_id','$attempted','$not_attempted','$right','$wrong','$marks_obtained','$total_marks')";
         $result_test_result = mysqli_query($conn,$sql_test_result);
-
-        $sql = "SELECT * FROM test_result WHERE test_id = $test_id";
-        $result = mysqli_query($conn,$sql);
-        $row = mysqli_fetch_assoc($result);
-        //Error
-        $result_id = $row['result_id'];
-        $_SESSION['result_id'] = $result_id;
+        $last_result_id = mysqli_insert_id($conn);
+        $_SESSION['result_id'] = $last_result_id;
 
         for ($i=0; $i < $number_of_questions; $i++)
         {

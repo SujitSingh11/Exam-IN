@@ -40,11 +40,6 @@
         </div>
     </footer>
     <?php  include '../include/create_test_modal_include.php' ?>
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fa fa-angle-up"></i>
-    </a>
-
 	<?php include '../include/js_include.php' ?>
 	<?php include '../include/student_js_include.php' ?>
 </body>

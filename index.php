@@ -32,10 +32,10 @@
 	<header class="masthead">
       <div class="header-content">
         <div class="header-content-inner">
-          <h1 id="homeHeading" class="animated bounceInLeft" style="animation-delay: 1s;">An Online Solution For Examination</h1>
-          <hr class="animated fadeIn">
-          <p class="animated bounceInRight" style="animation-delay: 1.5s;">Join our community to enjoy the full features of Exam-In!</p>
-          <a class="btn btn-outline-light btn-xl js-scroll-trigger animated bounceInUp " style="animation-delay: 2.5s;" href="#about">Find Out More</a>
+          <h1 id="homeHeading" class="animated fadeIn">An Online Solution For Examination</h1>
+          <hr>
+          <p>Join our community to enjoy the full features of Exam-In!</p>
+          <a class="btn btn-outline-light btn-xl js-scroll-trigger" href="#about">Find Out More</a>
         </div>
       </div>
     </header>
