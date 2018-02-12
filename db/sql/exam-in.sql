@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 05, 2018 at 03:36 AM
+-- Generation Time: Feb 12, 2018 at 11:50 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -33,6 +33,13 @@ CREATE TABLE `admin` (
   `user_id` smallint(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`admin_id`, `user_id`) VALUES
+(1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -41,11 +48,39 @@ CREATE TABLE `admin` (
 
 CREATE TABLE `contact_us` (
   `cid` smallint(6) NOT NULL,
-  `name` varchar(50) NOT NULL,
+  `first_name` varchar(50) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `subject` varchar(50) NOT NULL,
+  `phone` int(255) DEFAULT NULL,
   `message` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `contact_us`
+--
+
+INSERT INTO `contact_us` (`cid`, `first_name`, `last_name`, `email`, `phone`, `message`) VALUES
+(1, 'asdasdas', 'dasdasd', 'asdasd@sadfsa.com', 8388607, 'asdasdsad');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `feedback`
+--
+
+CREATE TABLE `feedback` (
+  `fid` smallint(6) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `feedback` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `feedback`
+--
+
+INSERT INTO `feedback` (`fid`, `name`, `email`, `feedback`) VALUES
+(1, 'Sujit Singh', 'sujitkuma2rsin2gh29@gmail.com', 'Really love your website');
 
 -- --------------------------------------------------------
 
@@ -65,7 +100,8 @@ CREATE TABLE `staff` (
 --
 
 INSERT INTO `staff` (`staff_id`, `user_id`, `specialization`, `qualification`) VALUES
-(1, 2, NULL, NULL);
+(1, 2, NULL, NULL),
+(2, 10, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -84,9 +120,9 @@ CREATE TABLE `student` (
 --
 
 INSERT INTO `student` (`stud_id`, `user_id`, `interest`) VALUES
-(1, 1, ''),
 (4, 7, ''),
-(5, 9, '');
+(5, 9, ''),
+(6, 11, '');
 
 -- --------------------------------------------------------
 
@@ -110,7 +146,16 @@ INSERT INTO `test_attempted` (`attempt_id`, `result_id`, `question_id`, `answer`
 (2, 1, 2, 3),
 (3, 1, 3, 1),
 (4, 1, 4, 2),
-(5, 1, 5, 4);
+(5, 1, 5, 4),
+(6, 2, 10, 3),
+(7, 2, 11, 2),
+(8, 2, 12, 4),
+(9, 2, 13, 2),
+(10, 2, 14, 3),
+(11, 3, 6, 1),
+(12, 3, 7, 1),
+(13, 3, 8, 1),
+(14, 3, 9, 1);
 
 -- --------------------------------------------------------
 
@@ -135,8 +180,9 @@ CREATE TABLE `test_bank` (
 --
 
 INSERT INTO `test_bank` (`test_id`, `staff_id`, `test_name`, `test_stream`, `test_subject`, `number_of_questions`, `neg_marks`, `test_time`, `test_visibility`) VALUES
-(7, 1, 'Class-Test 4', 'MCA-CET', 'Computer Awareness', 5, 1, 60, 0),
-(8, 1, 'Tutorial Test 1', 'MBA-CET', 'Computer Awareness', 4, 2, 40, 0);
+(7, 2, 'Class-Test 4', 'MCA-CET', 'Computer Awareness', 5, 1, 60, 0),
+(8, 1, 'Tutorial Test 1', 'MBA-CET', 'Computer Awareness', 4, 2, 40, 0),
+(9, 2, 'Mock Test 1', 'MCA', 'Sets', 5, 1, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -169,7 +215,12 @@ INSERT INTO `test_questions` (`question_id`, `test_id`, `question`, `option_1`, 
 (6, 8, 'asdasdsads', 'asdsadsadasd', 'sdfsdfsdfsdf', 'sdfsdsdgdfbvcb', 'cxbvncvnvn', 3, 3),
 (7, 8, 'asdasdas ddscxzvxcbv', 'bvcvcnvbcbvcb', ' sadas cxcvcxbvas', 'dgfsfdgdfgcxbcv', 'zzzxcxv dsgdfg', 3, 4),
 (8, 8, 'asda Sd sadfvdsv', 'SAdASd sadxzc', 'asdasgfsdv', 'dsfsdfsdf', 'asdasfsdvsdv', 1, 5),
-(9, 8, 'ASdsac', 'asdasc sad', 'asdascsa ', 'asd asczxcas', 'asdsacsa', 4, 2);
+(9, 8, 'ASdsac', 'asdasc sad', 'asdascsa ', 'asd asczxcas', 'asdsacsa', 4, 2),
+(10, 9, 'A __________ is an ordered collection of objects.', 'Relation', 'Function', 'Set', 'Proposition', 3, 4),
+(11, 9, 'The set O of odd positive integers less than 10 can be expressed by _____________.', '{1, 2, 3}', '{1, 3, 5, 7, 9}', '{1, 2, 5, 9}', '{1, 5, 7, 9, 11}', 2, 4),
+(12, 9, 'Power set of empty set has exactly _________ subset.', 'One ', 'Two', 'Zero', 'Three', 1, 4),
+(13, 9, 'What is the Cartesian product of A = {1, 2} and B = {a, b}?', '{(1, a), (1, b), (2, a), (b, b)}', '{(1, 1), (2, 2), (a, a), (b, b)}', '{(1, a), (2, a), (1, b), (2, b)}', '{(1, 1), (a, a), (2, a), (1, b)}', 3, 4),
+(14, 9, 'What is the cardinality of the set of odd positive integers less than 10?', '10', '5', '3', '20', 2, 4);
 
 -- --------------------------------------------------------
 
@@ -194,7 +245,9 @@ CREATE TABLE `test_result` (
 --
 
 INSERT INTO `test_result` (`result_id`, `stud_id`, `test_id`, `attempted`, `not_attempted`, `right_answers`, `wrong_answers`, `marks_obtained`, `total_marks`) VALUES
-(1, 1, 7, 5, 0, 3, 2, 12, 19);
+(1, 6, 7, 5, 0, 3, 2, 12, 19),
+(2, 6, 9, 5, 0, 2, 3, 5, 20),
+(3, 6, 8, 4, 0, 1, 3, -1, 14);
 
 -- --------------------------------------------------------
 
@@ -219,10 +272,12 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `username`, `email`, `password`, `hash`, `user_type`, `active`) VALUES
-(1, 'Sujit', 'Singh', 'Baby-Dev', 'sujitkumarsingh29@gmail.com', '$2y$10$q5z.36t.Ntri4/utOh4EBeij8OLaumNANYxYAkTdsqeq.KfR1.1vi', '19f3cd308f1455b3fa09a282e0d496f4', 2, 1),
-(2, 'Shubham', 'Shripurkar', 'Bumquest', 'shirpurkar.shubham@gmail.com', '$2y$10$DWBo6pSsAIWwGRlFvIYUDO6mLGChMRigvtMyA.CnG2Hl1b3MROYve', '7dcd340d84f762eba80aa538b0c527f7', 1, 0),
+(1, 'Sujit', 'Singh', 'Baby-Dev', 'sujitkumarsingh29@gmail.com', '$2y$10$R2z5mnHfRI.EL.1tXFdGBOZQ12SCZyKHi2IyO7cWEvd6GBlZoXn8S', '19f3cd308f1455b3fa09a282e0d496f4', 0, 1),
+(2, 'Shubham', 'Shripurkar', 'Bumquest', 'shirpurkar.shubham@gmail.com', '$2y$10$DWBo6pSsAIWwGRlFvIYUDO6mLGChMRigvtMyA.CnG2Hl1b3MROYve', '7dcd340d84f762eba80aa538b0c527f7', 1, 1),
 (7, 'Parth', 'Ladda', 'Parth001', 'path.ladda@gmail.com', '$2y$10$g8hFONlmBTi/5AYGiw.VOuXMDiY3AwC8Id9xDNwc.b62wW4bm3Pg.', 'e5f6ad6ce374177eef023bf5d0c018b6', 2, 0),
-(9, 'Sneha', 'Joglekar', 'snehaj', 'snehajoglekar123@gmail.com', '$2y$10$mAskjcEBp2lQTWe0dhih1epUBddThkQEiYC.JklcsJ3Rc0XxehF76', '1ff8a7b5dc7a7d1f0ed65aaa29c04b1e', 2, 1);
+(9, 'Sneha', 'Joglekar', 'snehaj', 'snehajoglekar123@gmail.com', '$2y$10$mAskjcEBp2lQTWe0dhih1epUBddThkQEiYC.JklcsJ3Rc0XxehF76', '1ff8a7b5dc7a7d1f0ed65aaa29c04b1e', 2, 1),
+(10, 'Anup', 'Chatlawar', 'Anup_321', 'anupcha2299@gmail.com', '$2y$10$wahcArvn8DBaAP1q4NIcbufnh05P.NPibAACoAxzW.Avc57wW4pKO', '94f6d7e04a4d452035300f18b984988c', 1, 1),
+(11, 'Francis', 'Lepcha', 'francislp21', 'francislp21@gmail.com', '$2y$10$7GZNfxMoUM4urCH/FvvDBeQH.pkQoXgqr50c1FVeRYqAdm.ya8Pvq', 'fbd7939d674997cdb4692d34de8633c4', 2, 1);
 
 --
 -- Indexes for dumped tables
@@ -239,6 +294,12 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `contact_us`
   ADD PRIMARY KEY (`cid`);
+
+--
+-- Indexes for table `feedback`
+--
+ALTER TABLE `feedback`
+  ADD PRIMARY KEY (`fid`);
 
 --
 -- Indexes for table `staff`
@@ -290,55 +351,61 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `admin_id` smallint(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `admin_id` smallint(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `contact_us`
 --
 ALTER TABLE `contact_us`
-  MODIFY `cid` smallint(6) NOT NULL AUTO_INCREMENT;
+  MODIFY `cid` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `feedback`
+--
+ALTER TABLE `feedback`
+  MODIFY `fid` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `staff`
 --
 ALTER TABLE `staff`
-  MODIFY `staff_id` smallint(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `staff_id` smallint(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `stud_id` smallint(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `stud_id` smallint(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `test_attempted`
 --
 ALTER TABLE `test_attempted`
-  MODIFY `attempt_id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `attempt_id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `test_bank`
 --
 ALTER TABLE `test_bank`
-  MODIFY `test_id` smallint(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `test_id` smallint(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `test_questions`
 --
 ALTER TABLE `test_questions`
-  MODIFY `question_id` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `question_id` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `test_result`
 --
 ALTER TABLE `test_result`
-  MODIFY `result_id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `result_id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` smallint(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `user_id` smallint(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
