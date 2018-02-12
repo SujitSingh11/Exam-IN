@@ -15,6 +15,12 @@
                 </div>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                <a class="nav-link" href="../common/my_profile.php">
+                    <i class="fas fa-user mr-1"></i>
+                    <span class="nav-link-text">My Profile</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
                 <a class="nav-link" href="../admin/admin_index.php">
                     <i class="fas fa-users mr-1"></i>
                     <span class="nav-link-text">Manage Users</span>

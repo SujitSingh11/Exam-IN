@@ -36,7 +36,7 @@
 			?>
 			<div class="card">
 				<div class="card-header">
-					<h4>Analysis</h4>
+					<h4 class="display-4" style="font-size:30px;">Analysis</h4>
 				</div>
 				<div class="card-body">
 					<div class="card m-3">
@@ -92,7 +92,7 @@
 					</div>
 					<div class="card m-3">
 						<div class="card-header">
-							<h5>Test Analysis</h5>
+							<h5 class="display-4" style="font-size:30px;">Test Analysis</h5>
 						</div>
 						<div class="card-body">
 							<div class="row">

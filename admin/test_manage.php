@@ -74,7 +74,14 @@
                                 <td>".$test_visibility."</td>
                                 <form action='test_delete.php' method='post'>
                                     <input type='hidden' name='test_id' value='".$row['test_id']."'>
-                                    <td><button class='btn btn-outline-danger' name='submitTest' type='submit'><i class='far fa-trash-alt'></i></button></td>
+                                    <td><button class='btn btn-outline-danger' name='submitTest' type='submit' data-toggle='tooltip'
+        data-placement='top' title='Delete'><i class='far fa-trash-alt'></i></button></td>
+                                </form>
+								<form action='../staff/test_review.php' method='post'>
+                                    <input type='hidden' name='test_id' value='".$row['test_id']."'>
+									<input type='hidden' name='test_name' value='".$row['test_name']."'>
+                                    <td><button class='btn btn-outline-info' name='submitTest' type='submit' data-toggle='tooltip'
+        data-placement='top' title='Review'><i class='far fa-file-alt'></i></button></td>
                                 </form>
                                 </tr>";
 								$i++;

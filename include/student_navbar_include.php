@@ -21,7 +21,7 @@
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="My Profile">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="../common/my_profile.php">
                     <i class="fas fa-user mr-1"></i>
                     <span class="nav-link-text">My Profile</span>
                 </a>

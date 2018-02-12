@@ -83,7 +83,8 @@
 												<form action='user_delete.php' method='post'>
 													<input type='hidden' name='user_id' value='".$row['user_id']."'>
 													<input type='hidden' name='stud_id' value='".$row['stud_id']."'>
-													<td><button class='btn btn-outline-danger' name='submitStud' type='submit'><i class='far fa-trash-alt'></i></button></td>
+													<td><button class='btn btn-outline-danger' name='submitStud' type='submit' data-toggle='tooltip'
+				        data-placement='top' title='Delete'><i class='far fa-trash-alt'><i class='far fa-trash-alt'></i></button></td>
 												</form>
 											</tr>";
 											$i++;
@@ -133,7 +134,8 @@
 													<form action='user_delete.php' method='post'>
 														<input type='hidden' name='user_id' value='".$row['user_id']."'>
 														<input type='hidden' name='staff_id' value='".$row['staff_id']."'>
-														<td><button class='btn btn-outline-danger' name='submitStaff' type='submit'><i class='far fa-trash-alt'></i></button></td>
+														<td><button class='btn btn-outline-danger' name='submitStaff' type='submit' data-toggle='tooltip'
+					        data-placement='top' title='Delete'><i class='far fa-trash-alt'><i class='far fa-trash-alt'></i></button></td>
 													</form>
 												</tr>";
 												$i++;

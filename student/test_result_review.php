@@ -33,7 +33,7 @@
         <div class="content-wrapper my-5">
             <div class="container my-3">
                 <div class="card mb-5 mx-5">
-                    <h5 class="card-header">Test Review</h5>
+                    <h5 class="card-header display-4" style="font-size:30px;">Test Review</h5>
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $test_name; ?></h5>
                         <?php
@@ -79,7 +79,7 @@
                                 }else {
                                     echo "<div class='card my-3 mx-4 text-white ".($correct_option == $answer_code?"bg-success":"bg-danger")."'>";
                                 }
-                                echo"   <h5 class='card-header'>".($i+1).". ".$row['question']."</h5>
+                                echo"   <h5 class='card-header display-4' style='font-size:30px;'>".($i+1).". ".$row['question']."</h5>
                                         <div class='card-body'>
                                             <div class='row'>
                                                 <div class='mx-4 col-md-5'>

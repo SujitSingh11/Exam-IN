@@ -42,7 +42,7 @@
             <div class="container my-3">
                 <div class="offset-1 col-md-10">
                     <div class="card mb-5 mx-5">
-                        <h5 class="card-header">Test Result</h5>
+                        <h5 class="card-header display-4" style="font-size:30px;">Test Result</h5>
                         <div class="card-body">
                             <div class="col-md-10">
                                 <hr>
@@ -90,7 +90,7 @@
             <div class="modal-dialog" role="document">
     			<div class="modal-content">
     				<div class="modal-header">
-                        <h5 class="modal-title">Submit Query to <?php echo $_SESSION['staff_username']; ?> </h5>
+                        <h5 class="modal-title display-4" style="font-size:30px;">Submit Query to <?php echo $_SESSION['staff_username']; ?> </h5>
     					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
     					<span aria-hidden="true">&times;</span>
     					</button>

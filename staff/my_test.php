@@ -27,7 +27,7 @@
     <!--My Test-->
     <div class="content-wrapper my-5">
         <div class="container my-3">
-            <h2 class="ml-5">My Test</h2>
+            <h2 class="ml-5 display-4" style="font-size: 30px">My Test</h2>
             <hr>
             <?php
                 echo "<div class='row mx-5'>";
@@ -46,7 +46,7 @@
                         echo"<div class='col-md-4 my-4'>
                                 <div class='card' style='width: 18rem;'>";
                                 echo"   <form class='card-body' action='test_review.php' method='POST'>
-                                            <h5 class='card-title'><i>".$row['test_name']."</i></h5>
+                                            <h5 class='card-title display-4' style='font-size:25px;'><i>".$row['test_name']."</i></h5>
                                             <h6 class='card-subtitle mb-1 text-muted'><i>".$row['test_stream']."</i></h6>
                                             <h7 class='card-subtitle mb-3 text-muted'><i>".$row['test_subject']."</i></h7>
                                             <p class='card-text'>Number of questions: <i>".$row['number_of_questions']."</i></p>

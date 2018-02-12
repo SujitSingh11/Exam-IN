@@ -43,7 +43,7 @@
 			?>
 			<div class="card">
 				<div class="card-header">
-					<h4>Student Test Attempts</h4>
+					<h4 class="display-4" style="font-size:30px;">Student Test Attempts</h4>
 				</div>
 				<div class="card-body">
 				<?php

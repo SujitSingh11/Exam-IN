@@ -38,7 +38,7 @@
 	<div class="content-wrapper my-5">
         <div class="container my-3">
             <div class="card mb-5 mx-5">
-                <h5 class="card-header"><?php echo $test_name; ?></h5>
+                <h5 class="card-header display-4" style="font-size:30px;"><?php echo $test_name; ?></h5>
                 <form id="test" action="test_attempt_script.php" method="POST" class="card-body">
                     <?php
 						// Notification
@@ -50,7 +50,7 @@
 						$i = 0;
                         while ($row = mysqli_fetch_assoc($result)) {
                             echo "<div class='card my-3 mx-4'>
-                                    <h5 class='card-header'>".($i+1).". ".$row['question']."</h5>
+                                    <h5 class='card-header display-4' style='font-size:30px;'>".($i+1).". ".$row['question']."</h5>
                                     <div class='card-body'>
                                         <div class='row'>
                                             <div class='mx-4 my-3 col-md-5'>
@@ -107,7 +107,7 @@
         <div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-                    <h5 class="modal-title">Are you Sure.?</h5>
+                    <h5 class="modal-title display-4" style="font-size:30px;">Are you Sure.?</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 					</button>
