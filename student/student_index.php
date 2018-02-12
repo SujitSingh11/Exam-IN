@@ -41,7 +41,7 @@
 				<div class="card-body">
 					<div class="card m-3">
 						<div class="card-header">
-							<h5>Test Given</h5>
+							<h5>Attempted Test</h5>
 						</div>
 						<div class="card-body">
 							<?php

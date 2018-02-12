@@ -29,7 +29,7 @@
                   </div>
                   <div class="side side-right">
                       <div class="intro-content">
-                          <div class="profile animated fadeInUp"><img src="img/profile2.svg" alt="profile2"></div>
+                          <div class="profile animated fadeInUp"><img src="img/profile8.jpg" alt="profile2"></div>
                           <h1><span class="animated slideInRight">Shubham Shirpurkar</span><span>Programmer</span></h1>
                       </div>
                       <div class="overlay"></div>
