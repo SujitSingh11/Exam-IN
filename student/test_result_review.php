@@ -37,6 +37,7 @@
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $test_name; ?></h5>
                         <?php
+                            $not_attempt = null;
                             if (isset($_SESSION['message']) AND !empty($_SESSION['message'])){
                                 echo "<div class='alert alert-warning' role='alert'>".$_SESSION['message']."</div><br>";
                             }
@@ -68,8 +69,17 @@
                                 elseif ($row['answer'] == 4) {
                                     $answer_code = "D";
                                 }
-                                echo "<div class='card my-3 mx-4 text-white ".($correct_option == $answer_code?"bg-success":"bg-danger")."'>
-                                        <h5 class='card-header'>".($i+1).". ".$row['question']."</h5>
+                                elseif ($row['answer'] == 0) {
+                                    $answer_code = "<i>Not Attempted</i>";
+                                    $not_attempt = 1;
+                                }
+                                if ($not_attempt == 1) {
+                                    echo"<div class='card my-3 mx-4 text-white bg-info'>";
+                                    $not_attempt = 0;
+                                }else {
+                                    echo "<div class='card my-3 mx-4 text-white ".($correct_option == $answer_code?"bg-success":"bg-danger")."'>";
+                                }
+                                echo"   <h5 class='card-header'>".($i+1).". ".$row['question']."</h5>
                                         <div class='card-body'>
                                             <div class='row'>
                                                 <div class='mx-4 col-md-5'>
