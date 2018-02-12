@@ -58,10 +58,10 @@
                                             if ($row['test_time'] > 0) {
                                                 echo "<p class='card-text'>Test Time: <i>".$row['test_time']."</i></p>";
                                             }
-                                echo"       <input type='hidden' name='test_id' value='<i>".$row['test_id']."</i>'>
-                                            <input type='hidden' name='test_name' value='<i>".$row['test_name']."</i>'>
+                                echo"       <input type='hidden' name='test_id' value='".$row['test_id']."'>
+                                            <input type='hidden' name='test_name' value='".$row['test_name']."'>
                                             <button type='submit' class='btn btn-outline-warning'>Review</button>
-                                            <button type='submit' class='btn btn-outline-info' formaction='edit_my_test.php'>Edit</button>
+                                            <button type='submit' class='btn btn-outline-info ml-2' formaction='edit_my_test.php'>Edit</button>
                                         </form>
                                 </div>
                             </div>";
