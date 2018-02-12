@@ -85,7 +85,7 @@
 								echo"	</tbody>
 									</table>";
 								}else {
-										echo "<div class='alert alert-info' role='alert'>No Student have attempted you test yet.!</div>";
+										echo "<div class='alert alert-info' role='alert'>You haven't Attempted any test yet.!</div>";
 								}
 							?>
 						</div>
