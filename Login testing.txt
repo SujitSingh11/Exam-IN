@@ -1,0 +1,15 @@
+email = sujitkumarsingh29@gmail.com
+pass = 111
+user-type = admin
+
+anupcha2299@gmail.com
+111
+staff
+
+francislp21@gmail.com
+111
+student
+
+rupsr420@gmail.com
+111
+student
