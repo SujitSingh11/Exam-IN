@@ -26,12 +26,6 @@
                     <span class="nav-link-text">My Profile</span>
                 </a>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="My Tests">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-file-alt mr-1"></i>
-                    <span class="nav-link-text">My Tests</span>
-                </a>
-            </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Test Bank">
                 <a class="nav-link" href="../test-system/test_bank.php">
                     <i class="fas fa-folder mr-1"></i>
