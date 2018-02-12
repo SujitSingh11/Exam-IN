@@ -38,7 +38,7 @@
 	<div class="content-wrapper my-5">
         <div class="container my-3">
             <div class="card mb-5 mx-5">
-                <h5 class="card-header"><?php echo $test_name; ?></h5>
+                <h5 class="card-header"><?php echo $test_name; echo $test_id; ?></h5>
                 <form id="test" action="test_attempt_script.php" method="POST" class="card-body">
                     <?php
 						// Notification
@@ -48,7 +48,6 @@
                         unset($_SESSION["message"]);
 						// Attempt Test
 						$i = 0;
-						$o = 1;
                         while ($row = mysqli_fetch_assoc($result)) {
                             echo "<div class='card my-3 mx-4'>
                                     <h5 class='card-header'>".($i+1).". ".$row['question']."</h5>

@@ -6,6 +6,19 @@
     body {
     overflow-x: hidden; }
 
+    #hr{
+
+    margin: 0;
+    border:         none;
+    border-left:    1px solid hsla(200, 10%, 50%,100);
+    height:         50vh;
+    width:          1px;
+    }
+    #nav .nav-link{
+        border-top: 1px solid hsla(200, 10%, 50%,100);
+        border-bottom:  1px solid hsla(200, 10%, 50%,100);
+
+    }
     body.sticky-footer {
     margin-bottom: 56px; }
     body.sticky-footer .content-wrapper {

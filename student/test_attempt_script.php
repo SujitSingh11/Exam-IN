@@ -97,7 +97,7 @@
                 $answer_code = 0;
             }
             $sql_test_attempted = "INSERT INTO test_attempted (result_id, question_id, answer)
-                                    VALUES('$result_id','$question_id','$answer_code')";
+                                    VALUES('$last_result_id','$question_id','$answer_code')";
             $result_test_attempted = mysqli_query($conn,$sql_test_attempted);
         }
         header('location: test_result.php');

@@ -69,8 +69,8 @@
                                         if ($row['test_time'] > 0) {
                                             echo "<p class='card-text'>Total Time: <i>".$row['test_time']."</i></p>";
                                         }
-                            echo"       <input type='hidden' name='test_id' value='<i>".$row['test_id']."</i>'>
-                                        <input type='hidden' name='test_name' value='<i>".$row['test_name']."</i>'>";
+                            echo"       <input type='hidden' name='test_id' value='".$row['test_id']."'>
+                                        <input type='hidden' name='test_name' value='".$row['test_name']."'>";
                                         if ($_SESSION['user_type']==1) {
                                             echo "<button type='submit' class='btn btn-outline-warning'>Review</button>";
                                         }
