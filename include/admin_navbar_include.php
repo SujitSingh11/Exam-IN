@@ -10,7 +10,9 @@
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="<?php echo $_SESSION['first_name'].' '.$_SESSION['last_name']; ?>">
                 <div id="profile" class="container my-4">
-                    <img class="mb-2" src="../img/profile7.jpg" width="60%" >
+                    <a href="../common/my_profile.php">
+                        <img class="mb-2" src="../img/profile7.jpg" width="60%" >
+                    </a>
                     <h6 class="nav-link-text text-muted"><?php echo $_SESSION['first_name'].' '.$_SESSION['last_name']; ?></h6>
                 </div>
             </li>

@@ -24,7 +24,7 @@
 <body>
     <!--Navbar-->
     <?php
-        if ($_SESSION['user-type']==0) {
+        if ($_SESSION['user_type']==0) {
             include '../include/admin_navbar_include.php';
         }else {
             include '../include/staff_navbar_include.php';

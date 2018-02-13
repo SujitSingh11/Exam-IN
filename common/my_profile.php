@@ -27,7 +27,7 @@
 				include '../include/staff_navbar_include.php';
 		 	}
 			elseif ($_SESSION['user_type']==2) {
-				include '../include/stud_navbar_include.php';
+				include '../include/student_navbar_include.php';
 			}
 		?>
     	<div class="content-wrapper my-5">
