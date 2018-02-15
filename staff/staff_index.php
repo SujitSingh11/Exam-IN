@@ -31,7 +31,9 @@
 			<!--Staff Dashboard-->
 			<?php
 				if (isset($_SESSION['message']) AND !empty($_SESSION['message'])){
-					echo "<div class='alert alert-warning alert-dismissible fade show' role='alert'>".$_SESSION['message']."</div><br>";
+					echo "<div class='alert alert-warning alert-dismissible fade show' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                        <span aria-hidden='true'>&times;</span>
+                    </button>".$_SESSION['message']."</div><br>";
 				}
 				unset($_SESSION["message"]);
 

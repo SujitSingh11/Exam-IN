@@ -95,10 +95,10 @@
 					</button>
                 </div>
                 <div class="modal-body">
-                    <p>Click 'Commit' if you want to Submit the test,<br></p>
+                    <p>Click 'Create' if you want to Submit the test<br></p>
                 </div>
                 <div class="modal-footer">
-                    <button form="question" class="btn btn-dark" type="submit">Commit</button>
+                    <button form="question" class="btn btn-dark" type="submit">Create</button>
                 </div>
             </div>
         </div>

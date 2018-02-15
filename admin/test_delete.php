@@ -20,6 +20,11 @@ if (isset($_POST['submitTest'])) {
     $result_test = mysqli_query($conn,$sql_test);
     $result_questions = mysqli_query($conn,$sql_questions);
     $result_test_result = mysqli_query($conn,$sql_result);
-    header("location: test_manage.php");
+    if ($_SESSION['user-type']==0) {
+        header("location: test_manage.php");
+    }elseif ($_SESSION['user-type']==1) {
+        header("location: ../staff/my_test.php");
+    }
+
 }
 ?>

@@ -15,7 +15,7 @@
 <head>
     <?php  include '../include/meta_include.php' ?>
     <meta charset="utf-8">
-    <title>Test Bank</title>
+    <title>My Test</title>
     <?php  include '../include/css_include.php' ?>
     <link rel="stylesheet" href="../css/master.css">
     <?php  include '../include/staff_navbar_css.php' ?>
@@ -62,6 +62,8 @@
                                             <input type='hidden' name='test_name' value='".$row['test_name']."'>
                                             <button type='submit' class='btn btn-outline-warning'>Review</button>
                                             <button type='submit' class='btn btn-outline-info ml-2' formaction='edit_my_test.php'>Edit</button>
+                                            <button class='btn btn-outline-danger ml-2' formaction='../admin/test_delete.php' name='submitTest' type='submit' data-toggle='tooltip'
+                data-placement='top' title='Delete'>Delete</button>
                                         </form>
                                 </div>
                             </div>";
@@ -82,10 +84,6 @@
         </div>
     </footer>
     <?php  include '../include/create_test_modal_include.php' ?>
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fa fa-angle-up"></i>
-    </a>
     <?php include '../include/js_include.php' ?>
     <?php include '../include/staff_master_js_include.php' ?>
 </body>

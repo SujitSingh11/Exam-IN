@@ -17,7 +17,7 @@
 <html>
 <head>
 	<?php include '../include/meta_include.php' ?>
-	<title>Exam-In Admin</title>
+	<title>Exam-In Student</title>
 	<?php include '../include/css_include.php' ?>
 	<link rel="stylesheet" href="../css/master.css">
 	<?php  include '../include/staff_navbar_css.php' ?>

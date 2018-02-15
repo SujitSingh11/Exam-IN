@@ -80,7 +80,6 @@
 									<h5 class="card-title display-4" style="font-size:30px;">Other Information:</h5>
 									<h5 class="card-text my-2">Email:<i class="display-4" style="font-size:20px"> <?php echo $_SESSION['email']; ?></i></h5>
 									<h5 class="card-text my-2">Username:<i class="display-4" style="font-size:20px"> <?php echo $_SESSION['username']; ?></i></h5>
-									<h5 class="card-text my-2">Designation:<i class="display-4" style="font-size:20px"> <?php echo $designation; ?></i></h5>
 								</div>
 							</div>
 						</div>
