@@ -1,10 +1,10 @@
 <!--Staff Navigation-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="#">
-        Exam-in
+<nav class="navbar navbar-expand-lg navbar-dark bg-warning fixed-top" id="mainNav">
+    <a class="navbar-brand" href="../staff/staff_index.php">
+        <img src="../Logo.svg" width="180" height="60" alt="">
     </a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <i class="fas fa-ellipsis-h"></i>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">

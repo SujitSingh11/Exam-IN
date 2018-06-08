@@ -36,7 +36,7 @@
 
     <!--Attempt Test-->
 	<div class="content-wrapper my-5">
-        <div class="container my-3">
+        <div class="container my-5">
             <div class="card mb-5 mx-5">
                 <h5 class="card-header display-4" style="font-size:30px;"><?php echo $test_name; ?></h5>
                 <form id="test" action="test_attempt_script.php" method="POST" class="card-body">

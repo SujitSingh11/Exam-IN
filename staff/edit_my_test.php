@@ -32,7 +32,7 @@
 
     <!--Edit Test Form-->
     <div class="content-wrapper my-5">
-        <div class="container my-3">
+        <div class="container my-5">
             <?php
 				if (isset($_SESSION['message']) AND !empty($_SESSION['message'])){
 					echo "<div class='alert alert-warning' role='alert'>".$_SESSION['message']."</div><br>";

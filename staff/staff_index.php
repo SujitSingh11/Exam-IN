@@ -27,7 +27,7 @@
 	<?php include '../include/staff_navbar_include.php' ?>
 
 	<div class="content-wrapper my-5">
-		<div class="container my-3">
+		<div class="container my-5">
 			<!--Staff Dashboard-->
 			<?php
 				if (isset($_SESSION['message']) AND !empty($_SESSION['message'])){

@@ -26,7 +26,7 @@
 
     <!--My Test-->
     <div class="content-wrapper my-5">
-        <div class="container my-3">
+        <div class="container my-5">
             <h2 class="ml-5 display-4" style="font-size: 30px">My Test</h2>
             <hr>
             <?php

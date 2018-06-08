@@ -39,7 +39,7 @@
 
         <!--Test Result-->
         <div class="content-wrapper my-5">
-            <div class="container my-3">
+            <div class="container my-5">
                 <div class="offset-1 col-md-10">
                     <div class="card mb-5 mx-5">
                         <h5 class="card-header display-4" style="font-size:30px;">Test Result</h5>

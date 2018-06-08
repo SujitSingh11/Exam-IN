@@ -172,7 +172,7 @@
 				<div class="col-lg-4 mr-auto text-center">
 					<i class="fas fa-envelope fa-2x sr-contact my-3 wow animated fadeInUp" style="animation-delay: 0.5s;"></i>
 					<p>
-					  <a href="mailto:=examin.assist@yahoo.com">examin.assist@yahoo.com</a>
+					  <a href="mailto:examin.assist@yahoo.com">examin.assist@yahoo.com</a>
 					</p>
 				</div>
 			</div>
@@ -231,6 +231,12 @@
 		        window.location.hash = $(this).find(':selected').data('href');
 		    });
 
+		});
+
+		$("#service").click(function() {
+		    $('html, body').animate({
+		        scrollTop: $("#services").offset().top
+		    }, 1000);
 		});
 	</script>
 </body>

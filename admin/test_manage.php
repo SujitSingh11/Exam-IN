@@ -23,9 +23,11 @@
 	<?php include '../include/admin_navbar_include.php' ?>
 
 	<div class="content-wrapper my-5">
-		<div class="container my-3">
+		<div class="container my-5">
 			<div class="card">
-				<h3 class="card-header">Manage Test</h3>
+				<div class="card-header">
+					<h4 class="display-4" style="font-size:30px;">Manage Test</h4>
+				</div>
 				<div class="card-body">
 					<?php
     					if (isset($_SESSION['message']) AND !empty($_SESSION['message'])){

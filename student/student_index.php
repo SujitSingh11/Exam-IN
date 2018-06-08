@@ -27,7 +27,7 @@
 	<?php include '../include/student_navbar_include.php' ?>
 
 	<div class="content-wrapper my-5">
-		<div class="container my-3">
+		<div class="container my-5">
 			<?php
 				if (isset($_SESSION['message']) AND !empty($_SESSION['message'])){
 					echo "<div class='alert alert-warning' role='alert'>".$_SESSION['message']."</div><br>";
@@ -151,6 +151,7 @@
     <?php  include '../include/create_test_modal_include.php' ?>
 	<?php include '../include/js_include.php' ?>
 	<?php include '../include/student_js_include.php' ?>
+	<?php include '../include/staff_master_js_include.php' ?>
 	<script>
 	var ctx = document.getElementById("myChart").getContext('2d');
 	var myChart = new Chart(ctx, {

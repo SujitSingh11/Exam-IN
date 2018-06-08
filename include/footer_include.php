@@ -34,7 +34,7 @@
                       <a href="#" class="facebook wow animated fadeIn" style="animation-delay: 1.3s;"><i class="fab fa-facebook-square"></i></a>
                       <a href="#" class="google wow animated fadeIn" style="animation-delay: 1.6s;"><i class="fab fa-google-plus-g"></i></a>
                   </div>
-                  <button type="button" class="btn btn-default" data-target="#contactus">Contact us</button>
+                  <button type="button" class="btn btn-default wow animated fadeIn" data-target="#contactus">Contact us</button>
               </div>
           </div>
       </div>
