@@ -15,4 +15,4 @@ How to Install
 
 IMP: If you are using this in an Virtual server make sure the Email Verification process will only work on that same system so open your mail in the same browser while signing up.
 
-Please feel free to futher improve it GOOD LUCK !!!
+Please feel free to futher improve on it GOOD LUCK !!!
